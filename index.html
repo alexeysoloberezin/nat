@@ -1,0 +1,390 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<style>
+        .lazy-section {
+            min-height: 100vh;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .lazy-section::after {
+            content: "Секция ещё не загружена";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #999;
+        }
+        
+        .lazy-section.loaded {
+            margin: 0;
+        }
+        
+        .lazy-section.loaded::after {
+            content: none;
+        }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+/>
+<body>
+    <section class="hero" >
+        <img src="./images/hero.png" class="section-bg " alt="">
+        <div class="container">
+            <p>КРЕАТИВНАЯ EVENT-КОМАНДА. <br/> ОРГАНИЗАЦИЯ ПРАЗДНИКОВ, МЕРОПРИЯТИЙ И ТИМБИЛДИНГОВ</p>
+            <h1>8STORIES</h1>
+        </div>
+    </section>
+
+    <div class="stiky-header">
+        <div class="stiky-header-row">
+            <div class="stiky-header-row-left">
+                <a href="#" class="stiky-header-logo">8STORIES |</a>
+                <div class="stiky-header-projects">
+                    Проекты:
+                </div>
+            </div>
+            <ul>
+                <li><a class="scroll-to stiky-header-link" href="#idea">Идея и визуальный код</a></li>
+                <li><a class="scroll-to stiky-header-link" href="#templateTLR">День Рождения в стиле “Sunset”</a></li>
+                <li><a class="scroll-to stiky-header-link" href="#templateTLR-1">Выездная свадьба</a></li>
+                <li><a class="scroll-to stiky-header-link" href="#templateTLR-2">Гендер-пати</a></li>
+                <li><a class="scroll-to stiky-header-link" href="#templateTLR-3">Ужин для клиентов</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="lazy-section" data-template="about"></div>
+    <template id="about">
+        <section class="about">
+            <div class="about-l">
+                <img src="./images/about_1.JPG" alt="">
+                <img src="./images/about_2.JPG" alt="">
+            </div>
+            <div class="about-r" style="background-image: url('./images/about_fon.png');">
+                <h3>ПРИВЕТСТВУЕМ! <br/>
+                    ЭТО ЕРЕМИНА ЕЛЕНА <br/>
+                    И ПЕРЕВЕРЗЕВ АНАТАЛЬЯ</h3>
+                <div class="about-r-text">
+                    <p>Мы вместе с нашей командой более 3х лет
+                        организовываем мероприятия</p>
+                    <p>[дни рождения, корпоративы,
+                        b2b-ивенты,презентации, VIP-ужины и закрытые
+                        мероприятия]</p>
+                </div>
+            </div>
+        </section>
+    </template>
+
+   
+    <div class="lazy-section" data-template="how"></div>
+    <template id="how">
+        <section class="how">
+            <div class="container">
+                <h2>О НАС</h2>
+            </div>
+            <div class="container">
+                <p class="how-text text-primary">Наша команда 8stories — это архитектор впечатлений,
+                    который помогает вам прокладывать путь между
+                    мечтой и реальностью, превращая хаос в
+                    гармонию событий. В моих руках тайминги
+                    становятся союзником, а каждая деталь, — штрихом
+                    на холсте незабываемого опыта.
+                </p>
+            </div>
+            <div class="container">
+                <h2>КАК?</h2>
+                <p class="how-text-2">мы разрабатываем любую концепцию
+                    мероприятия по вашему бюджету и
+                    реализовываем в быстрые сроки</p>
+            </div>
+            <img src="./images/wine.png" class="how-wine" alt="">
+        </section>
+    </template>
+
+    <div class="lazy-section" data-template="weCreate"></div>
+    <template id="weCreate">
+        <section class="weCreate">
+            <img src="/images/template.jpg" class="section-bg grayscale" alt="">
+            <div class="container">
+                <h2>МЫ СОЗДАЕМ:</h2>
+                <ul class="weCreate-list">
+                    <li>выездные мероприятия</li>
+                    <li>мероприятия в Москве и Подмосковье</li>
+                    <li>мероприятия от 2 до 200 человек</li>
+                    <li>создаём концептуальные мероприятия со своим лоском,</li>
+                    <li>где вы или ваши клиенты будут в восторге!</li>
+                    <li>обсуждаем концепцию совместно с вами на живой встрече или по Zoom</li>
+                </ul>
+            </div>
+        </section>
+    </template>
+
+    <div class="lazy-section" data-template="sobs"></div>
+    <template id="sobs">
+        <section class="sobs">
+            <img src="/images/sobs.png" class="section-bg " alt="">
+            <div class="container">
+                <h4 class="sobs-title">НАШИ <br/>СОБЫТИЯ</h4>
+                <ul class="sobs-list">
+                <li><a class="scroll-to" href="#idea">Идея и визуальный код</a></li>
+                <li><a class="scroll-to" href="#templateTLR">День Рождения в стиле “Sunset”</a></li>
+                <li><a class="scroll-to" href="#templateTLR-1">Выездная свадьба</a></li>
+                <li><a class="scroll-to" href="#templateTLR-2">Гендер-пати</a></li>
+                <li><a class="scroll-to" href="#templateTLR-3">Ужин для клиентов</a></li>
+                </ul>
+            </div>
+        </section>
+      
+    </template>
+
+    <div class="lazy-section" data-template="project"></div>
+    <template id="project">
+        <section class="project">
+            <img src="./images/template.jpg" class="project-img" alt="">
+            <div class="project-l" style="background-image: url('./images/template.jpg');"></div>
+            <div class="project-r">
+            <h3 class="project-title">Режиссёры + <br/>Организаторы</h3>
+            <p class="project-text">
+                <em>Вип-ужин для гостей ЖК ICONIC<br>
+                От создания концепции до реализации</em>
+            </p>
+            
+            <h3 class="project-subtitle">Проект ICONIC</h3>
+            
+            <ul class="project-list">
+                <li>поиск и подбор площадки в ОАЭ</li>
+                <li>общение с подрядчиками</li>
+                <li>составление смет</li>
+                <li>создание питчингов и презентаций</li>
+                <li>для клиентов</li>
+                </ul>
+            </div>
+        </section>
+        <section class="photos">
+            <div>
+                <img src="./images/template.jpg" alt="">
+                <img src="./images/template.jpg" alt="">
+            </div>
+            <div>
+                <img src="./images/template.jpg" alt="">
+                <img src="./images/template.jpg" alt="">
+            </div>
+            <div>
+                <img src="./images/template.jpg" alt="">
+                <img src="./images/template.jpg" alt="">
+            </div>
+            <div>
+                <img src="./images/template.jpg" alt="">
+                <img src="./images/template.jpg" alt="">
+            </div>
+        </section>
+    </template>
+
+    <div class="lazy-section" data-template="idea"></div>
+    <template id="idea">
+        <section class="idea">
+            <div class="idea-l">
+                <h2>ИДЕЯ И <br/>ВИЗУАЛЬНЫЙ КОД</h2>
+
+                <p>Концепция проекта ICONIC - это новая эра роскоши и&nbsp;креативности. Иммерсивный опыт через геймификацию участников.</p>
+
+                <p>Мы смешали космические метавселенные и итальянский шарм с&nbsp;культурными легендами, такими как Моника Беллуччи и&nbsp;Федерико Феллини.</p>
+
+                <p>2 дня исключительного гастрономического путешествия в мир итальянской кухни, сопровождающееся увлекательным шоу.</p>
+
+            </div>
+            <div class="idea-r" style="background-image: url('./images/template.jpg');">
+            </div>
+        </section>
+        <section class="six">
+            <div class="six-l" style="background-image: url('./images/template.jpg');">
+            </div>
+            <div class="six-r" style="background-image: url('./images/template.jpg');">
+            <div>
+            <h3>МЫ УВЛЕКАЕМСЯ МОДОЙ И&nbsp;СТИЛЕМ, ЧТО ДАЁТ ВЫСОКИЙ УРОВЕНЬ НАСМОТРЕННОСТИ</h3>
+
+            </div>
+        </div>
+    </section>
+    </template>
+   
+
+    <div class="lazy-section" data-template="templateTLR"></div>
+    <template id="templateTLR">
+        <section class="templateTLR">
+            <div class="templateTLR-l">
+                <h2>День Рождения в&nbsp;стиле “Sunset”</h2>
+                <h4>Организация дня рождения с&nbsp;концепцией вечеринки на&nbsp;закате</h4>
+                <ul>
+                    <li>контроль выполнения работ подрядчиков (артисты, фотографы, видеографы, декор, световик, кейтеринг)</li>
+                    <li>встреча гостей</li>
+                    <li>контроль за исполнением таймингов</li>
+                    <li>помощь гостям и создание комфортных условий для каждого участника мероприятия</li>
+                    <li>подъём контента</li>
+                </ul>
+            </div>
+            <div class="templateTLR-r" style="background-image: url('./images/template.jpg');">
+            </div>
+        </section>
+        <section style="background-image: url('./images/template.jpg');">
+        </section>
+        <section class="photosSection">
+            <div>
+                <img src="./images/template.jpg" alt="">
+            </div>
+            <div>
+                <img src="./images/template.jpg" alt="">
+                <img src="./images/template.jpg" alt="">
+            </div>
+            <div>
+                <img src="./images/template.jpg" alt="">
+            </div>
+        </section>
+        <section class="photosSection_2">
+            <div>
+                <img src="./images/template.jpg" alt="">
+                <img src="./images/template.jpg" alt="">
+            </div>
+            <div>
+                <img src="./images/template.jpg" alt="">
+                <img src="./images/template.jpg" alt="">
+            </div>
+            <div>
+                <img src="./images/template.jpg" alt="">
+                <img src="./images/template.jpg" alt="">
+            </div>
+        </section>
+    </template>
+
+    <div class="lazy-section" data-template="templateTLR-1"></div>
+    <template id="templateTLR-1">
+        <section class="templateTLR">
+                <div class="templateTLR-l">
+                <h2>Выездная <br/>свадьба</h2>
+                <h4>Организация камерной <br/>свадьбы в Абу-Даби</h4>
+                <ul>
+                <li>поиск площадки</li>
+                <li>подбор подрядчиков в ОАЭ</li>
+                <li>составление концепции свадьбы</li>
+                <li>согласование отрисовки эскизов декора площадки</li>
+                <li>размещение гостей в доме, организация всего отдыха для гостей (3 дня)</li>
+                </ul>
+                <a class="button mt-6" data-fancybox="templateTLR-1" href="./images/wid/001.jpg">Открыть галерею</a>
+            </div>
+            <div class="templateTLR-r" style="background-image: url('./images/wid/001.jpg');">
+            </div>
+        </section>
+        <section class="threeImages">
+            <img data-fancybox="templateTLR-1" href="./images/wid/002.jpg" src="./images/wid/002.jpg" alt="">
+            <img data-fancybox="templateTLR-1" href="./images/wid/004.jpg" src="./images/wid/004.jpg" alt="">
+            <img data-fancybox="templateTLR-1" href="./images/wid/005.jpg" src="./images/wid/005.jpg" alt="">
+        </section>
+        <section class="threeImages withPadding">
+            <img data-fancybox="templateTLR-1" href="./images/wid/011.jpg" src="./images/wid/011.jpg" alt="">
+            <img data-fancybox="templateTLR-1" href="./images/wid/040.jpg" src="./images/wid/040.jpg" alt="">
+            <img data-fancybox="templateTLR-1" href="./images/wid/041.jpg" src="./images/wid/041.jpg" alt="">
+        </section>
+        <section class="threeImages withPadding">
+            <img data-fancybox="templateTLR-1" href="./images/wid/066.jpg" src="./images/wid/066.jpg" alt="">
+            <img data-fancybox="templateTLR-1" href="./images/wid/088.jpg" src="./images/wid/088.jpg" alt="">
+            <img data-fancybox="templateTLR-1" href="./images/wid/112.jpg" src="./images/wid/112.jpg" alt="">
+        </section>
+        <section class="photosSection_2">
+            <div>
+                <img data-fancybox="templateTLR-1" href="./images/wid/142.jpg" src="./images/wid/142.jpg" alt="">
+                <img data-fancybox="templateTLR-1" href="./images/wid/145.jpg" src="./images/wid/145.jpg" alt="">
+            </div>
+            <div>
+                <img data-fancybox="templateTLR-1" href="./images/wid/198.jpg" src="./images/wid/198.jpg" alt="">
+                <img data-fancybox="templateTLR-1" href="./images/wid/202.jpg" src="./images/wid/202.jpg" alt="">
+            </div>
+            <div>
+                <img data-fancybox="templateTLR-1" href="./images/wid/210.jpg" src="./images/wid/210.jpg" alt="">
+                <img data-fancybox="templateTLR-1" href="./images/wid/215.jpg" src="./images/wid/215.jpg" alt="">
+            </div>
+        </section>
+    </template>
+
+    <div class="lazy-section" data-template="templateTLR-2"></div>
+    <template id="templateTLR-2">
+        <section class="templateTLR">
+            <div class="templateTLR-l">
+            <h2>Гендер-пати</h2>
+            <h4>Организация гендер-пати для семьи будущего мальчика</h4>
+            <ul>
+              <li>режиссура мероприятия</li>
+              <li>поиск площадки</li>
+              <li>составление концепции</li>
+              <li>работа с подрядчиками</li>
+              <li>согласование отрисовки эскизов декора площадки</li>
+              <li>проведение мероприятия</li>
+            </ul>
+            <a class="button mt-6" data-fancybox="templateTLR-3" href="./images/gender/img1.jpg">Открыть галерею</a>
+            <img data-fancybox="templateTLR-3" href="./images/gender/img5.jpg" style="display: none;" src="./images/gender/img5.jpg" alt="">
+        </div>
+            <div class="templateTLR-r" style="background-image: url('./images/gender/img1.jpg');">
+            </div>
+        </section>
+        <section class="threeImages withPadding">
+            <img data-fancybox="templateTLR-3" href="./images/gender/img2.jpg" src="./images/gender/img2.jpg" alt="">
+            <img data-fancybox="templateTLR-3" href="./images/gender/img3.jpg" src="./images/gender/img3.jpg" alt="">
+            <img data-fancybox="templateTLR-3" href="./images/gender/img4.jpg" src="./images/gender/img4.jpg" alt="">
+        </section>
+    </template>
+
+    <div class="lazy-section" data-template="templateTLR-3"></div>
+    <template id="templateTLR-3">
+        <section class="templateTLR">
+            <div class="templateTLR-l">
+            <h2>Ужин для клиентов</h2>
+            <h4>Организация ужина <br/>для VAQUERA BRAND</h4>
+            <ul>
+                <li>режиссура мероприятия</li>
+                <li>поиск площадки</li>
+                <li>составление концепции</li>
+                <li>работа с подрядчиками</li>
+                <li>согласование отрисовки эскизов декора площадки</li>
+                <li>проведение мероприятия</li>
+            </ul>
+
+        </div>
+            <div class="templateTLR-r" style="background-image: url('./images/template.jpg');">
+            </div>
+        </section>
+    </template>
+
+    <div class="lazy-section" data-template="footer"></div>
+    <template id="footer">
+        <footer class="footer" style="background-image: url('./images/template.jpg');">
+                <div class="overlay"></div>
+                <div class="container footer-wrp">
+                <div>
+                    <h5>Обсудить ваше событие <br/> и&nbsp;забронировать дату</h5>
+                </div>
+                <div>
+                    <a href="tel:+79833634604">+79833634604</a>
+                    <a href="tel:+79162888131">+79162888131</a>
+                </div>
+            </div>
+        </footer>
+    </template>
+
+    <script src="scripts/lazy.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

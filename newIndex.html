@@ -1,0 +1,503 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="newStyles.css">
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<style>
+        .lazy-section {
+            min-height: 100vh;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .lazy-section::after {
+            content: "Секция ещё не загружена";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #999;
+        }
+        
+        .lazy-section.loaded {
+            margin: 0;
+        }
+        
+        .lazy-section.loaded::after {
+            content: none;
+        }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+/>
+<body>
+   
+
+    <header class="header">
+            <div class="header-row">
+                <div class="header-logo">LOGO</div>
+                <div class="header-menu">
+                    <ul>
+                        <li><a class="header-menu-link" href="#">Главная</a></li>
+                        <li><a class="header-menu-link" href="#">О нас</a></li>
+                        <li><a class="header-menu-link" href="#">Услуги</a></li>
+                    </ul>
+                </div>
+                <a href="#" class="header-btn open-popup-form">
+                    Оставить заявку
+                </a>
+        </div>
+    </header>
+
+    <div class="hero">
+        <svg class="hero-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="1920" height="800" preserveAspectRatio="none" viewBox="0 0 1920 800">
+            <g mask="url(&quot;#SvgjsMask1022&quot;)" fill="none">
+                <rect width="1920" height="800" x="0" y="0" fill="rgba(26, 24, 24, 1)"></rect>
+                <path d="M0,626.571C132.873,655.511,277.295,681.202,399.674,621.905C526.589,560.41,609.723,433.457,665.701,304.015C720.969,176.214,752.598,30.969,712.949,-102.507C675.223,-229.51,548.541,-300.164,457.607,-396.518C371.189,-488.088,310.523,-611.489,192.139,-654.364C71.311,-698.124,-69.294,-685.609,-184.736,-629.152C-293.093,-576.16,-340.792,-454.534,-413.408,-358.22C-480.475,-269.266,-558.092,-190.737,-594.628,-85.495C-637.025,36.629,-699.489,177.566,-639.092,291.864C-578.482,406.564,-416.446,408.994,-301.524,469.181C-199.012,522.869,-113.069,601.944,0,626.571" fill="#151313"></path>
+                <path d="M1920 1490.525C2049.128 1489.1280000000002 2182.576 1440.347 2271.109 1346.336 2353.718 1258.615 2326.942 1118.283 2374.7219999999998 1007.665 2421.051 900.407 2540.482 826.706 2545.969 709.999 2551.701 588.0740000000001 2493.191 463.981 2404.209 380.43 2318.218 299.688 2191.557 292.378 2075.999 268.716 1969.767 246.96400000000006 1860.689 213.423 1757.948 248.101 1656.788 282.246 1602.061 384.37 1522.479 455.546 1428.8229999999999 539.309 1261.5520000000001 578.494 1248.774 703.492 1235.85 829.914 1410.659 892.939 1466.074 1007.3009999999999 1519.519 1117.597 1480.061 1264.653 1563.976 1353.984 1652.798 1448.539 1790.278 1491.9279999999999 1920 1490.525" fill="#1f1d1d"></path>
+            </g>
+            <defs>
+                <mask id="SvgjsMask1022">
+                    <rect width="1920" height="800" fill="#ffffff"></rect>
+                </mask>
+            </defs>
+        </svg>
+        <div class="container">
+            <div class="hero-row">
+                <div class="hero-content">
+                    <div class="stars">
+                        <img src="./images/icons/star.svg" alt="">
+                        <img src="./images/icons/star.svg" alt="">
+                        <img src="./images/icons/star.svg" alt="">
+                        <img src="./images/icons/star.svg" alt="">
+                        <img src="./images/icons/star.svg" alt="">
+                    </div>
+                    <p>Event-агентство</p>
+                    <h1>8STORIES</h1>
+                    <p>Приватные события для тех, <br/>
+                        кто ценит исключительность</p>
+                    <a href="#" class="btn btn-outline">Обсудить ваше</a>
+                </div>
+                <div class="hero-img">
+                    <img src="./images/template.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+
+    <section class="portfolio">
+        <img class="portfolio-lines" src="./images/icons/lines.svg" alt="" />
+        <div class="container portfolio-container">
+            <div class="section-header">
+                <h2 class="section-title text-center">КОМАНДА LEVENT ОРГАНИЗУЕТ ДЛЯ ВАС ЭКСКЛЮЗИВНОЕ МЕРОПРИЯТИЕ ПОД КЛЮЧ</h2>
+            </div>
+            
+            <!-- Swiper -->
+            <div class="swiper-container swiper-portfolio">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background-image: url('https://source.unsplash.com/random/800x500/?kids-party,1');">
+                        <div class="slide-content portfolio-item card">
+                            <div class="portfolio-item-img">
+                                <img src="./images/template.jpg" alt="">
+                            </div>
+                            <div class="portfolio-item-content">
+                                <h3>Пиратская вечеринка</h3>
+                                <p>Наши детские вечеринки — это не просто события, а настоящие мечты, оживающие прямо на глазах у детей и взрослых. Мы тщательно разрабатываем каждую программу, чтобы создать неповторимую атмосферу волшебства и радости. Реалистичные декорации, лучшие аниматоры, ростовые куклы и артисты приглашают каждого погрузиться в миры любимых игр, музыкальных групп, мультиков и фильмов.</p>
+                                <div class="portfolio-item-btns">
+                                    <a class="btn btn-primary" href="#">Подробнее</a>
+                                    <a class="btn btn-outline" href="#">Портфолио</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" style="background-image: url('https://source.unsplash.com/random/800x500/?kids-party,1');">
+                        <div class="slide-content portfolio-item card">
+                            <div class="portfolio-item-img">
+                                <img src="./images/template.jpg" alt="">
+                            </div>
+                            <div class="portfolio-item-content">
+                                <h3>Пиратская вечеринка</h3>
+                                <p>Наши детские вечеринки — это не просто события, а настоящие мечты, оживающие прямо на глазах у детей и взрослых. Мы тщательно разрабатываем каждую программу, чтобы создать неповторимую атмосферу волшебства и радости. Реалистичные декорации, лучшие аниматоры, ростовые куклы и артисты приглашают каждого погрузиться в миры любимых игр, музыкальных групп, мультиков и фильмов.</p>
+                                <div class="portfolio-item-btns">
+                                    <a class="btn btn-primary" href="#">Подробнее</a>
+                                    <a class="btn btn-outline" href="#">Портфолио</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide" style="background-image: url('https://source.unsplash.com/random/800x500/?kids-party,1');">
+                        <div class="slide-content portfolio-item card">
+                            <div class="portfolio-item-img">
+                                <img src="./images/template.jpg" alt="">
+                            </div>
+                            <div class="portfolio-item-content">
+                                <h3>Пиратская вечеринка</h3>
+                                <p>Наши детские вечеринки — это не просто события, а настоящие мечты, оживающие прямо на глазах у детей и взрослых. Мы тщательно разрабатываем каждую программу, чтобы создать неповторимую атмосферу волшебства и радости. Реалистичные декорации, лучшие аниматоры, ростовые куклы и артисты приглашают каждого погрузиться в миры любимых игр, музыкальных групп, мультиков и фильмов.</p>
+                                <div class="portfolio-item-btns">
+                                    <a class="btn btn-primary" href="#">Подробнее</a>
+                                    <a class="btn btn-outline" href="#">Портфолио</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-portfolio-pagination swiper-pagination"></div>
+                <div class="swiper-portfolio-button-next swiper-button-next"></div>
+                <div class="swiper-portfolio-button-prev swiper-button-prev"></div>
+            </div>
+            
+         
+        </div>
+
+        <a href="#" class="btn btn-outline mx-auto mt-4">Все проекты</a>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var swiper = new Swiper('.swiper-portfolio', {
+                effect: 'coverflow',
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: 'auto',
+                coverflowEffect: {
+                    rotate: 20,
+                    stretch: 0,
+                    depth: 200,
+                    modifier: 1,
+                    slideShadows: true,
+                },
+                loop: false,
+                pagination: {
+                    el: '.swiper-portfolio-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-portfolio-button-next',
+                    prevEl: '.swiper-portfolio-button-prev',
+                },
+            });
+        });
+    </script>
+   
+
+    <section class="">
+        <div class="masonry ">
+            <a href="./images/wid/001.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/001.jpg" /></a>
+            <a href="./images/wid/002.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/002.jpg" /></a>
+            <a href="./images/wid/004.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/004.jpg" /></a>
+            <a href="./images/wid/005.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/005.jpg" /></a>
+            <a href="./images/wid/011.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/011.jpg" /></a>
+            <a href="./images/wid/040.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/040.jpg" /></a>
+            <a href="./images/wid/066.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/066.jpg" /></a>
+            <a href="./images/wid/088.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/088.jpg" /></a>
+            <a href="./images/wid/112.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/112.jpg" /></a>
+            <a href="./images/wid/142.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/142.jpg" /></a>
+            <a href="./images/wid/145.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/145.jpg" /></a>
+            <a href="./images/wid/198.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/198.jpg" /></a>
+            <a href="./images/wid/202.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/202.jpg" /></a>
+            <a href="./images/wid/215.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/215.jpg" /></a>
+          </div>
+    </section>
+    <script>
+        // var msnry = new Masonry( '.masonry', {
+        //     itemSelector: '.brick',
+        //     columnWidth: 200,
+        //     gutter: 16
+        // });
+    </script>
+
+
+    <section class="about shadow-section">
+        <svg class="about-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="1920" height="800" preserveAspectRatio="none" viewBox="0 0 1920 800">
+            <g mask="url(&quot;#SvgjsMask1018&quot;)" fill="none">
+                <rect width="1920" height="800" x="0" y="0" fill="rgba(26, 24, 24, 1)"></rect>
+                <path d="M0,540.698C100.261,528.938,179.956,463.613,273.401,425.421C392.539,376.729,547.856,388.507,624.802,285.337C702.552,181.089,699.132,29.397,661.633,-95.128C626.18,-212.862,524.696,-295.182,427.365,-370.314C344.359,-434.389,241.508,-452.841,145.026,-493.912C33.05,-541.579,-68.909,-666.628,-185.315,-631.125C-301.982,-595.542,-299.876,-421.071,-383.849,-332.607C-474.055,-237.577,-651.992,-224.567,-690.202,-99.236C-727.75,23.922,-632.109,148.348,-563.743,257.453C-502.023,355.952,-421.848,442.603,-317.982,494.789C-220.31,543.863,-108.563,553.432,0,540.698" fill="#151313"></path>
+                <path d="M1920 1457.766C2052.384 1443.92 2188.217 1462.1019999999999 2307.338 1402.7089999999998 2434.282 1339.4160000000002 2552.556 1244.779 2608.56 1114.455 2664.1040000000003 985.2 2603.515 841.532 2608.901 700.951 2615.805 520.736 2746.748 320.749 2644.665 172.07399999999996 2544.831 26.673999999999978 2323.058 31.798999999999978 2146.728 27.833999999999946 1998.737 24.505999999999972 1870.455 106.02999999999997 1729.583 151.49800000000005 1593.268 195.495 1442.438 199.19000000000005 1332.252 290.713 1212.3319999999999 390.322 1099.354 525.246 1092.144 680.972 1085.024 834.757 1229.328 946.196 1295.467 1085.215 1360.243 1221.368 1347.353 1412.325 1476.841 1489.568 1606.659 1567.008 1769.659 1473.49 1920 1457.766" fill="#1f1d1d"></path>
+            </g>
+            <defs>
+                <mask id="SvgjsMask1018">
+                    <rect width="1920" height="800" fill="#ffffff"></rect>
+                </mask>
+            </defs>
+        </svg>
+        <h2 class="text-center section-title">ВЛЮБЛЕННЫЕ <br/> В СВОЕ ДЕЛО ПРОФЕССИОНАЛЫ</h2>
+        <div class="container">
+            <div class="about-wrp">
+                <div class="about-l">
+                    <div class="about-l-img-2">
+                        <img src="./images/about_2.JPG" alt="">
+                    </div>
+                    <div class="about-l-img-1">
+                        <img src="./images/about_1.JPG" alt="">
+                    </div>
+                </div>
+                <div class="about-r">
+                    <div class="info-grid">
+                        <div class="info-block">
+                          <h4>10</h4>
+                          <p>лет опыта организации уникальных мероприятий и праздников в Москве и за ее пределами</p>
+                        </div>
+                        <div class="info-block">
+                          <h4>600+</h4>
+                          <p>эксклюзивных мероприятий для самых взыскательных клиентов, включая медийных личностей</p>
+                        </div>
+                      
+                        <div class="info-block">
+                          <h4>ПОБЕДИТЕЛИ</h4>
+                          <p>в номинации «Лучшая свадьба 2021» по версии White Wedding International Award</p>
+                        </div>
+                        <div class="info-block">
+                          <h4>ФИНАЛИСТЫ</h4>
+                          <p>премий в номинациях<br />«Лучшее частное событие» и<br />«Лучший свадебный проект»</p>
+                        </div>
+                      
+                        <div class="info-full">
+                          <h4>ВЫСОКОПРОФЕССИОНАЛЬНО</h4>
+                          <p>контролируя каждый момент мероприятия, мы создаем классические и неординарные события с тщательно продуманной структурой и высочайшим клиентским сервисом, чтобы вам оставалось только наслаждаться эмоциями</p>
+                        </div>
+                      </div>
+                      
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews">
+        <img src="./images/icons/lines.svg" alt="" class="reviews-lines">
+        <div class="container">
+            <h2 class="text-center section-title">ОТЗЫВЫ И ЭМОЦИИ <br/> НАШИХ ГОСТЕЙ</h2>
+            <div class="container reviews-container">
+                <div class="swiper-container swiper-reviews">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="./images/reviews/rev_1.jpg" data-fancybox="reviews" class="slide-content review-item card">
+                               <img src="./images/reviews/rev_1.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="./images/reviews/rev_2.jpg" data-fancybox="reviews" class="slide-content review-item card">
+                               <img src="./images/reviews/rev_2.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="./images/reviews/rev_3.jpg" data-fancybox="reviews" class="slide-content review-item card">
+                               <img src="./images/reviews/rev_3.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="./images/reviews/rev_4.jpg" data-fancybox="reviews" class="slide-content review-item card">
+                               <img src="./images/reviews/rev_4.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="./images/reviews/rev_5.jpg" data-fancybox="reviews" class="slide-content review-item card">
+                               <img src="./images/reviews/rev_5.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="./images/reviews/rev_6.jpg" data-fancybox="reviews" class="slide-content review-item card">
+                               <img src="./images/reviews/rev_6.jpg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-reviews-pagination swiper-pagination"></div>
+                    <div class="swiper-reviews-button-next swiper-button-next"></div>
+                    <div class="swiper-reviews-button-prev swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var swiper = new Swiper('.swiper-reviews', {
+                grabCursor: true,
+                centeredSlides: true,
+                effect: 'creative',
+                creativeEffect: {
+                    prev: {
+                    shadow: true,
+                    translate: [0, 0, -400],
+                    },
+                    next: {
+                    translate: ["100%", 0, 0],
+                    },
+                },
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: false,
+                autoHeight: true,
+                pagination: {
+                    el: '.swiper-reviews-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-reviews-button-next',
+                    prevEl: '.swiper-reviews-button-prev',
+                },
+            });
+        });
+    </script>
+
+
+    <section class="tabsPortfolio shadow-section">
+        <div class="light-lines">
+
+        </div>
+        <div style="position: relative; z-index: 25;">
+            <h2 class="text-center">Наши яркие мероприятия</h2>
+            <p class="text-center section-subtitle">Мы создаем мероприятия, которые оставят незабываемые впечатления. Наши проекты — это не просто события, а настоящие шедевры, которые создаются с любовью и профессионализмом.</p>
+        
+        </div>
+        <div class="container">
+            <div class="tabsPortfolio-tabs">
+                <button data-tab="tabsPortfolio-1" class="btn btn-primary">Свадьба в стиле вечеринки Sunset</button>
+                <button data-tab="tabsPortfolio-2" class="btn btn-gray">Воздушный бал</button>
+                <button data-tab="tabsPortfolio-3" class="btn btn-gray">Гендер пати</button>
+                <button data-tab="tabsPortfolio-4" class="btn btn-gray">The Trends</button>
+            </div>           
+        </div>
+        <div class="tabsPortfolio-content"  style="position: relative; z-index: 25;"> </div>
+    </section>
+
+
+    <section class="form">
+        <svg class="about-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="1920" height="800" preserveAspectRatio="none" viewBox="0 0 1920 800">
+            <g mask="url(&quot;#SvgjsMask1018&quot;)" fill="none">
+                <rect width="1920" height="800" x="0" y="0" fill="rgba(26, 24, 24, 1)"></rect>
+                <path d="M0,540.698C100.261,528.938,179.956,463.613,273.401,425.421C392.539,376.729,547.856,388.507,624.802,285.337C702.552,181.089,699.132,29.397,661.633,-95.128C626.18,-212.862,524.696,-295.182,427.365,-370.314C344.359,-434.389,241.508,-452.841,145.026,-493.912C33.05,-541.579,-68.909,-666.628,-185.315,-631.125C-301.982,-595.542,-299.876,-421.071,-383.849,-332.607C-474.055,-237.577,-651.992,-224.567,-690.202,-99.236C-727.75,23.922,-632.109,148.348,-563.743,257.453C-502.023,355.952,-421.848,442.603,-317.982,494.789C-220.31,543.863,-108.563,553.432,0,540.698" fill="#151313"></path>
+                <path d="M1920 1457.766C2052.384 1443.92 2188.217 1462.1019999999999 2307.338 1402.7089999999998 2434.282 1339.4160000000002 2552.556 1244.779 2608.56 1114.455 2664.1040000000003 985.2 2603.515 841.532 2608.901 700.951 2615.805 520.736 2746.748 320.749 2644.665 172.07399999999996 2544.831 26.673999999999978 2323.058 31.798999999999978 2146.728 27.833999999999946 1998.737 24.505999999999972 1870.455 106.02999999999997 1729.583 151.49800000000005 1593.268 195.495 1442.438 199.19000000000005 1332.252 290.713 1212.3319999999999 390.322 1099.354 525.246 1092.144 680.972 1085.024 834.757 1229.328 946.196 1295.467 1085.215 1360.243 1221.368 1347.353 1412.325 1476.841 1489.568 1606.659 1567.008 1769.659 1473.49 1920 1457.766" fill="#1f1d1d"></path>
+            </g>
+            <defs>
+                <mask id="SvgjsMask1018">
+                    <rect width="1920" height="800" fill="#ffffff"></rect>
+                </mask>
+            </defs>
+        </svg>
+        <div class="container">
+            <div class="form-wrp">
+                <div class="left-section">
+                    <div class="logo">8STORIES</div>
+                    <div class="contact contact-1">СВЯЖИТЕСЬ С НАМИ ЛЮБЫМ УДОБНЫМ СПОСОБОМ</div>
+                    <a href="mailto:event@leventagency.ru" class="contact link">event@leventagency.ru</a>
+                    <a href="tel:+79266006799" class="contact link">+7 926-600-67-99</a>
+                    <div class="social">
+                        <ul>
+                            <li><a href="#"><img src="./images/socials/instagram.png" alt=""></a></li>
+                            <li><a href="#"><img src="./images/socials/telegram.png" alt=""></a></li>
+                            <li><a href="#"><img src="./images/socials/wa.png" alt=""></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="right-section card">
+                    <h3 class="form-title">ЗАКАЗАТЬ СОБЫТИЕ</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Имя</label>
+                            <input type="text" id="name" name="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Телефон</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="callback">Неколько слов о событии</label>
+                            <input type="text" id="callback" name="callback">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                    </form>
+                </div>
+            </div>
+           
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-row">
+                <div class="footer-logo">LEVENT</div>
+                <div class="footer-menu">
+                    <div class="footer-menu-item">
+                        <h4>МЕНЮ</h4>
+                        <ul>
+                            <li><a href="#">Главная</a></li>
+                            <li><a href="#">О нас</a></li>
+                            <li><a href="#">Услуги</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-menu-item">
+                        <h4>О компании</h4>
+                        <ul>
+                            <li><a href="#">Главная</a></li>
+                            <li><a href="#">О нас</a></li>
+                            <li><a href="#">Услуги</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-menu-item">
+                        <h4>Документы</h4>
+                        <ul>
+                            <li><a href="#">Политика конфиденциальности</a></li>
+                            <li><a href="#">Условия использования</a></li>
+                            <li>ИП Левитина А. Ю.</li>
+                            <li>ИНН 771200491234</li>
+                            <li>ОГРН 1127746001613</li>
+                            <li>Москва, Ленинградский проспект, 36с40, подъезд 2</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <div>
+        <div id="popup-form" class="popup-form"></div>
+
+        <template id="popup-form-template">
+            <div class="popup-form-container card">
+                <h3>Заказать событие</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </form>
+            </div>
+        </template>
+    </div>
+
+
+    
+    <script src="scripts/popup.js"></script>
+    <script src="scripts/lazy.js"></script>
+    <script src="scripts/tabs.js"></script>
+    <script>
+        Fancybox.bind("[data-fancybox]", {
+            Thumbs: false,
+        });
+    </script>
+</body>
+</html>
