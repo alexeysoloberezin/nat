@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="newStyles.css">
+    <!-- <link rel="stylesheet" href="newStyles.css"> -->
 </head>
 <style>
         .lazy-section {
@@ -35,6 +35,311 @@
         
         .lazy-section.loaded::after {
             content: none;
+        }
+
+        a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:"";content:none}table{border-collapse:collapse;border-spacing:0}*{box-sizing:border-box}
+
+        :root {
+        --primary-color: #c7290a;
+        --white: #fff;
+        --black: #000;
+        --bg: #1a1818;
+        --bg-card: #222020;
+        --font2: "Cormorant SC", serif;
+        --font1: "Montserrat", sans-serif;
+        }
+
+        .text-primary{
+            color: var(--primary-color);
+        }
+        body {
+        color: var(--white);
+        background: var(--bg);
+        font-family: var(--font1);
+        font-optical-sizing: auto;
+        font-size: 16px;
+        font-weight: 400;
+        font-style: normal;
+        }
+        body,
+        html {
+        max-width: 100vw;
+        overflow-x: hidden;
+        width: 100%;
+        height: 100%;
+        }
+        ::-webkit-scrollbar{
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track{
+            background: #222020;
+            border-radius: 10px !important;
+        }
+        ::-webkit-scrollbar-thumb{
+            background: var(--primary-color);
+            border-radius: 10px;
+        }
+
+
+        p {
+        line-height: 1.4;
+        }
+
+        .font2 {
+        font-family: var(--font2);
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+        font-family: var(--font2);
+        }
+
+        .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: rgba(26, 24, 24, 0.8);
+        backdrop-filter: blur(10px);
+        z-index: 100;
+        }
+        .mx-auto {
+        margin: 0 auto;
+        }
+        .mt-4 {
+        margin-top: 20px;
+        }
+        .header-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        }
+        .header-logo {
+        font-size: 30px;
+        font-weight: 700;
+        color: var(--primary-color);
+        font-family: var(--font2);
+        }
+        .header-menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        }
+        @media (max-width: 1200px) {
+        .header-menu {
+            display: none;
+        }
+        }
+        .header-menu ul {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        }
+        .header-menu-link {
+        font-size: 16px;
+        font-weight: 500;
+        text-decoration: none;
+        color: var(--white);
+        }
+        .header-btn {
+        padding: 10px 20px;
+        background: transparent;
+        color: var(--white);
+        text-decoration: none;
+        border: 1px solid var(--primary-color);
+        border-radius: 5px;
+        }
+        body {
+        padding-top: 68px;
+        }
+        section {
+        padding: 100px 0;
+        position: relative;
+        }
+        @media (max-width: 1200px) {
+        section {
+            padding: 40px 0;
+        }
+        }
+        section .container {
+        position: relative;
+        z-index: 2;
+        }
+        * {
+        box-sizing: border-box;
+        }
+
+        .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+        }
+        img {
+        max-width: 100%;
+        }
+        .hero {
+        margin-bottom: 100px;
+        }
+        .hero .container{
+        z-index: 22;
+        position: static;
+        }
+        .hero-svg{
+        position: absolute;
+        top: 0;
+        object-fit: cover;
+        left: 0;
+        height: 100%;
+        transform-origin: left top;
+        transform: scale(0.7);
+        z-index: 1;
+        }
+        .hero-row {
+        display: grid;
+        height: 100%;
+        height: calc(100vh - 68px);
+        grid-template-columns: 1fr 1fr;
+        }
+        .hero .btn{
+        font-size: 20px;
+        
+        }
+
+        h1 {
+        font-size: clamp(70px, 15vw, 150px);
+        font-weight: 500;
+        font-family: var(--font2);
+        }
+        .hero {
+        position: relative;
+        }
+        .hero-img {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        width: 60vw;
+        top: 0;
+        right: 0;
+        z-index: 23;
+        justify-content: center;
+        overflow: hidden;
+        }
+        .hero-content{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 34;
+        justify-content: center;
+        align-items: flex-start;
+        }
+        .hero-img:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 0;
+        border-left: 50vh solid var(--bg); /* Используем 100vh для высоты экрана */
+        border-top: 100vh solid transparent; /* Создаем треугольник вниз */
+        z-index: 2;
+        transform-origin: left top;
+        }
+
+        .hero-row:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 300px;
+        z-index: 30;
+        background: linear-gradient(to top, #1a1818, rgba(26, 24, 24, 0));
+        }
+
+        .hero-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        }
+        .hero h1{
+        margin: 10px 0;
+        }
+        .hero p {
+        font-size: clamp(17px, 2vw, 24px);
+        font-weight: 300;
+        opacity: 0.8;
+        }
+        .hero .btn{
+        margin-top: 30px;
+        font-size: clamp(16px, 2vw, 22px);
+        }
+        .hero .stars{
+        margin-bottom: 10px;
+        }
+        @media (max-width: 1200px) {
+        .hero .btn{
+            margin-top: 15px;
+        }
+        .hero-img::before{
+            content: none;
+        }
+        .hero-row{
+            height: initial;
+        }
+        .hero-img{
+            position: static;
+            margin-top: 40px;
+            max-height: 400px;
+            width: 100%;
+            border-radius: 14px;
+        }
+        .hero-row{
+            grid-template-columns: 1fr;
+        }
+        }
+        .stars{
+        display: flex;
+        flex-direction: row;
+        gap: 7px;
+        margin-top: 20px;
+        opacity: 0.6;
+        }
+        .stars img {
+        max-width: 20px;
+        max-height: 20px;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            font-size: clamp(15px, 2vw, 18px);
+            background: transparent;
+            text-decoration: none;
+            border: none;
+            display: flex;
+            cursor: pointer;
+            width: fit-content;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+        }
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--white);
+        }
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+        .btn-gray {
+            background: #222020;
+            color: var(--white);
         }
 </style>
 <body>

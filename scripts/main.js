@@ -192,6 +192,17 @@ class InitAppScript {
         document.head.appendChild(fancyboxScript);
     }
 
+    addStyles(){
+        const stylesCheck = document.querySelector('#styles-script');
+        if(stylesCheck) return;
+
+        const styles = document.createElement('link');
+        styles.href = 'newStyles.css';
+        styles.rel = 'stylesheet';
+        styles.id = 'styles-script';
+        document.head.appendChild(styles);
+    }
+
     async renderSection(sectionElement) {
         return new Promise(resolve => {
             const templateId = sectionElement.getAttribute('data-template');
@@ -208,7 +219,8 @@ class InitAppScript {
                     this.observer.unobserve(sectionElement);
                 }
 
-                this.initFancyBox()
+                this.initFancyBox();
+                this.addStyles();
 
                 // add swiperStyles
                 if(templateId === 'reviewsSection' || templateId === 'portfolio'){
