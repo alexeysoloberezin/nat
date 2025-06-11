@@ -4,6 +4,11 @@ class InitAppScript {
         this.lazySections = [];
         this.isScrolling = false;
         this.stickyHeaderInit = false;
+
+
+        // swiperInited 
+        this.swiperInited = false;
+        this.swiperInitedSections = [];
     }
 
     // Инициализация приложения
@@ -49,6 +54,66 @@ class InitAppScript {
         });
     }
 
+    portfolioSwiperInit() {
+        if (typeof Swiper === 'undefined') return;
+        
+        new Swiper('.swiper-portfolio', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+                rotate: 20,
+                stretch: 0,
+                depth: 200,
+                modifier: 1,
+                slideShadows: true,
+            },
+            loop: false,
+            pagination: {
+                el: '.swiper-portfolio-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-portfolio-button-next',
+                prevEl: '.swiper-portfolio-button-prev',
+            },
+        });
+        this.swiperInitedSections.push('portfolio');
+    }
+
+    reviewsSwiperInit() {
+        if (typeof Swiper === 'undefined') return;
+
+        new Swiper('.swiper-reviews', {
+            grabCursor: true,
+            centeredSlides: true,
+            effect: 'creative',
+            creativeEffect: {
+                prev: {
+                shadow: true,
+                translate: [0, 0, -400],
+                },
+                next: {
+                translate: ["100%", 0, 0],
+                },
+            },
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: false,
+            autoHeight: true,
+            pagination: {
+                el: '.swiper-reviews-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-reviews-button-next',
+                prevEl: '.swiper-reviews-button-prev',
+            },
+        });
+        this.swiperInitedSections.push('reviewsSection');
+    }
+
     async handleSectionNavigation(targetId) {
         if (this.isScrolling) return;
         this.isScrolling = true;
@@ -56,7 +121,6 @@ class InitAppScript {
         try {
             const targetSection = document.querySelector(`.lazy-section[data-template="${targetId}"]`);
             if (!targetSection) return;
-
             await this.renderAllSectionsUpTo(targetSection);
 
             await new Promise(resolve => {
@@ -86,14 +150,51 @@ class InitAppScript {
         }
     }
 
+    addSwiperSrc(){
+        const checkSwiperInited = document.querySelector('#swiper-script');
+        if(checkSwiperInited) return;
+
+        const swiperStyles = document.createElement('link');
+        swiperStyles.href = 'lib/swiper/swiper.css';
+        swiperStyles.rel = 'stylesheet';
+        swiperStyles.id = 'swiper-styles';
+        document.head.appendChild(swiperStyles);
+
+        const swiperScript = document.createElement('script');
+        swiperScript.src = 'lib/swiper/swiper.js';
+        swiperScript.id = 'swiper-script';
+        swiperScript.onload = () => {
+            this.reviewsSwiperInit();
+            this.portfolioSwiperInit();
+        }
+        document.head.appendChild(swiperScript);
+    }
+
+    initFancyBox(){
+        const fancyboxScriptCheck = document.querySelector('#fancybox-script');
+        if(fancyboxScriptCheck) return;
+
+        const fancyboxStyles = document.createElement('link');
+        fancyboxStyles.href = 'lib/fancybox/fancybox.css';
+        fancyboxStyles.rel = 'stylesheet';
+        fancyboxStyles.id = 'fancybox-styles';
+        document.head.appendChild(fancyboxStyles);
+
+        const fancyboxScript = document.createElement('script');
+        fancyboxScript.src = 'lib/fancybox/fancybox.js';
+        fancyboxScript.id = 'fancybox-script';
+        fancyboxScript.onload = () => {
+            Fancybox.bind("[data-fancybox]", {
+                Thumbs: false,
+                Hash: false
+            });
+        }
+        document.head.appendChild(fancyboxScript);
+    }
+
     async renderSection(sectionElement) {
         return new Promise(resolve => {
             const templateId = sectionElement.getAttribute('data-template');
-
-            const showHeaderArr = ['sobs', 'templateTLR', 'templateTLR-1', 'templateTLR-2', 'templateTLR-3'];
-            if(showHeaderArr.includes(templateId)){
-                this.initStikyHeader();
-            }
 
             const template = document.getElementById(templateId);
             
@@ -105,6 +206,21 @@ class InitAppScript {
                 
                 if (this.observer) {
                     this.observer.unobserve(sectionElement);
+                }
+
+                this.initFancyBox()
+
+                // add swiperStyles
+                if(templateId === 'reviewsSection' || templateId === 'portfolio'){
+                    this.addSwiperSrc();
+                }            
+                
+                if(templateId === 'reviewsSection'){
+                    this.reviewsSwiperInit();
+                }
+
+                if(templateId === 'portfolio'){
+                    this.portfolioSwiperInit();
                 }
 
                 // Даём время на отрисовку
@@ -160,7 +276,4 @@ class InitAppScript {
 // Инициализация после загрузки DOM
 document.addEventListener('DOMContentLoaded', () => {
     new InitAppScript().init();
-    Fancybox.bind("[data-fancybox]", {
-        // Your custom options
-    });
 });
