@@ -296,8 +296,10 @@
     </template>
 
 
-    <section class="tabsPortfolio shadow-section" id="portfolio">
-        <div class="light-lines">
+    <div class="lazy-section" data-template="tabsPortfolio"></div>
+    <template id="tabsPortfolio">
+        <section class="tabsPortfolio shadow-section" id="portfolio">
+            <div class="light-lines">
 
         </div>
         <div style="position: relative; z-index: 25;">
@@ -307,8 +309,9 @@
         </div>
         <div class="tabsPortfolio-tabs">
         </div>     
-        <div class="tabsPortfolio-content"  style="position: relative; z-index: 25;"> </div>
-    </section>
+            <div class="tabsPortfolio-content"  style="position: relative; z-index: 25;"> </div>
+        </section>
+    </template>
 
 
     <div class="lazy-section" data-template="contacts"></div>
