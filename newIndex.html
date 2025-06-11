@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="newStyles.css">
     <link
     rel="stylesheet"
@@ -52,12 +52,14 @@
 
     <header class="header">
             <div class="header-row">
-                <div class="header-logo">LOGO</div>
+                <div class="header-logo">8STORIES</div>
                 <div class="header-menu">
                     <ul>
-                        <li><a class="header-menu-link" href="#">Главная</a></li>
-                        <li><a class="header-menu-link" href="#">О нас</a></li>
-                        <li><a class="header-menu-link" href="#">Услуги</a></li>
+                        <li><a class="header-menu-link goTo" href="#portfolio">Наши проекты</a></li>
+                        <li><a class="header-menu-link goTo" href="#about">О нас</a></li>
+                        <li><a class="header-menu-link goTo" href="#reviewsSection">Отзывы</a></li>
+                        <li><a class="header-menu-link goTo" href="#portfolio">Портфолио</a></li>
+                        <li><a class="header-menu-link goTo" href="#contacts">Контакты</a></li>
                     </ul>
                 </div>
                 <a href="#" class="header-btn open-popup-form">
@@ -93,7 +95,7 @@
                     <h1>8STORIES</h1>
                     <p>Приватные события для тех, <br/>
                         кто ценит исключительность</p>
-                    <a href="#" class="btn btn-outline">Обсудить ваше</a>
+                    <a href="#" class="btn btn-outline">Обсудить ваше мероприятие</a>
                 </div>
                 <div class="hero-img">
                     <img src="./images/template.jpg" alt="">
@@ -104,11 +106,11 @@
 
    
 
-    <section class="portfolio">
+    <section class="portfolio" id="portfolio">
         <img class="portfolio-lines" src="./images/icons/lines.svg" alt="" />
         <div class="container portfolio-container">
             <div class="section-header">
-                <h2 class="section-title text-center">КОМАНДА LEVENT ОРГАНИЗУЕТ ДЛЯ ВАС ЭКСКЛЮЗИВНОЕ МЕРОПРИЯТИЕ ПОД КЛЮЧ</h2>
+                <h2 class="section-title text-center">КОМАНДА <span class="text-primary">8STORIES</span> ОРГАНИЗУЕТ ДЛЯ ВАС ЭКСКЛЮЗИВНОЕ МЕРОПРИЯТИЕ ПОД КЛЮЧ</h2>
             </div>
             
             <!-- Swiper -->
@@ -201,32 +203,24 @@
 
     <section class="">
         <div class="masonry ">
-            <a href="./images/wid/001.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/001.jpg" /></a>
-            <a href="./images/wid/002.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/002.jpg" /></a>
-            <a href="./images/wid/004.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/004.jpg" /></a>
-            <a href="./images/wid/005.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/005.jpg" /></a>
-            <a href="./images/wid/011.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/011.jpg" /></a>
-            <a href="./images/wid/040.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/040.jpg" /></a>
-            <a href="./images/wid/066.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/066.jpg" /></a>
-            <a href="./images/wid/088.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/088.jpg" /></a>
-            <a href="./images/wid/112.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/112.jpg" /></a>
-            <a href="./images/wid/142.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/142.jpg" /></a>
-            <a href="./images/wid/145.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/145.jpg" /></a>
-            <a href="./images/wid/198.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/198.jpg" /></a>
-            <a href="./images/wid/202.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/202.jpg" /></a>
-            <a href="./images/wid/215.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/215.jpg" /></a>
+            <a href="./images/wid/init/001.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/001.jpg" /></a>
+            <a href="./images/wid/init/002.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/002.jpg" /></a>
+            <a href="./images/wid/init/004.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/004.jpg" /></a>
+            <a href="./images/wid/init/005.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/005.jpg" /></a>
+            <a href="./images/wid/init/011.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/011.jpg" /></a>
+            <a href="./images/wid/init/040.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/040.jpg" /></a>
+            <a href="./images/wid/init/066.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/066.jpg" /></a>
+            <a href="./images/wid/init/088.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/088.jpg" /></a>
+            <a href="./images/wid/init/112.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/112.jpg" /></a>
+            <a href="./images/wid/init/142.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/142.jpg" /></a>
+            <a href="./images/wid/init/145.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/145.jpg" /></a>
+            <a href="./images/wid/init/198.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/198.jpg" /></a>
+            <a href="./images/wid/init/202.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/202.jpg" /></a>
+            <a href="./images/wid/init/215.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/215.jpg" /></a>
           </div>
     </section>
-    <script>
-        // var msnry = new Masonry( '.masonry', {
-        //     itemSelector: '.brick',
-        //     columnWidth: 200,
-        //     gutter: 16
-        // });
-    </script>
 
-
-    <section class="about shadow-section">
+    <section class="about shadow-section" id="about">
         <svg class="about-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="1920" height="800" preserveAspectRatio="none" viewBox="0 0 1920 800">
             <g mask="url(&quot;#SvgjsMask1018&quot;)" fill="none">
                 <rect width="1920" height="800" x="0" y="0" fill="rgba(26, 24, 24, 1)"></rect>
@@ -253,11 +247,11 @@
                 <div class="about-r">
                     <div class="info-grid">
                         <div class="info-block">
-                          <h4>10</h4>
+                          <h4 class="lg">10</h4>
                           <p>лет опыта организации уникальных мероприятий и праздников в Москве и за ее пределами</p>
                         </div>
                         <div class="info-block">
-                          <h4>600+</h4>
+                          <h4 class="lg">600+</h4>
                           <p>эксклюзивных мероприятий для самых взыскательных клиентов, включая медийных личностей</p>
                         </div>
                       
@@ -281,7 +275,7 @@
         </div>
     </section>
 
-    <section class="reviews">
+    <section class="reviews" id="reviewsSection">
         <img src="./images/icons/lines.svg" alt="" class="reviews-lines">
         <div class="container">
             <h2 class="text-center section-title">ОТЗЫВЫ И ЭМОЦИИ <br/> НАШИХ ГОСТЕЙ</h2>
@@ -358,7 +352,7 @@
     </script>
 
 
-    <section class="tabsPortfolio shadow-section">
+    <section class="tabsPortfolio shadow-section" id="portfolio">
         <div class="light-lines">
 
         </div>
@@ -367,19 +361,13 @@
             <p class="text-center section-subtitle">Мы создаем мероприятия, которые оставят незабываемые впечатления. Наши проекты — это не просто события, а настоящие шедевры, которые создаются с любовью и профессионализмом.</p>
         
         </div>
-        <div class="container">
-            <div class="tabsPortfolio-tabs">
-                <button data-tab="tabsPortfolio-1" class="btn btn-primary">Свадьба в стиле вечеринки Sunset</button>
-                <button data-tab="tabsPortfolio-2" class="btn btn-gray">Воздушный бал</button>
-                <button data-tab="tabsPortfolio-3" class="btn btn-gray">Гендер пати</button>
-                <button data-tab="tabsPortfolio-4" class="btn btn-gray">The Trends</button>
-            </div>           
-        </div>
+        <div class="tabsPortfolio-tabs">
+        </div>     
         <div class="tabsPortfolio-content"  style="position: relative; z-index: 25;"> </div>
     </section>
 
 
-    <section class="form">
+    <section class="form" id="contacts">
         <svg class="about-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="1920" height="800" preserveAspectRatio="none" viewBox="0 0 1920 800">
             <g mask="url(&quot;#SvgjsMask1018&quot;)" fill="none">
                 <rect width="1920" height="800" x="0" y="0" fill="rgba(26, 24, 24, 1)"></rect>
@@ -397,15 +385,8 @@
                 <div class="left-section">
                     <div class="logo">8STORIES</div>
                     <div class="contact contact-1">СВЯЖИТЕСЬ С НАМИ ЛЮБЫМ УДОБНЫМ СПОСОБОМ</div>
-                    <a href="mailto:event@leventagency.ru" class="contact link">event@leventagency.ru</a>
-                    <a href="tel:+79266006799" class="contact link">+7 926-600-67-99</a>
-                    <div class="social">
-                        <ul>
-                            <li><a href="#"><img src="./images/socials/instagram.png" alt=""></a></li>
-                            <li><a href="#"><img src="./images/socials/telegram.png" alt=""></a></li>
-                            <li><a href="#"><img src="./images/socials/wa.png" alt=""></a></li>
-                        </ul>
-                    </div>
+                    <a href="mailto:8storiesevent@gmail.com" class="contact link">8storiesevent@gmail.com</a>
+                    <a href="tel:+79833634604" class="contact link">+7(983) 363-46-04</a>
                 </div>
                 <div class="right-section card">
                     <h3 class="form-title">ЗАКАЗАТЬ СОБЫТИЕ</h3>
@@ -433,22 +414,24 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-row">
-                <div class="footer-logo">LEVENT</div>
+                <div class="footer-logo">8STORIES</div>
                 <div class="footer-menu">
                     <div class="footer-menu-item">
-                        <h4>МЕНЮ</h4>
+                        <h4>Меню</h4>
                         <ul>
-                            <li><a href="#">Главная</a></li>
-                            <li><a href="#">О нас</a></li>
-                            <li><a href="#">Услуги</a></li>
+                            <li><a class="goTo" href="#portfolio">Наши проекты</a></li>
+                            <li><a class="goTo" href="#about">О нас</a></li>
+                            <li><a class="goTo" href="#reviewsSection">Отзывы</a></li>
+                            <li><a class="goTo" href="#portfolio">Портфолио</a></li>
+                            <li><a class="goTo" href="#contacts">Контакты</a></li>
                         </ul>
                     </div>
                     <div class="footer-menu-item">
-                        <h4>О компании</h4>
+                        <h4>Контакты</h4>
                         <ul>
-                            <li><a href="#">Главная</a></li>
-                            <li><a href="#">О нас</a></li>
-                            <li><a href="#">Услуги</a></li>
+                            <li><a href="mailto:8storiesevent@gmail.com">8storiesevent@gmail.com</a></li>
+                            <li><a href="tel:+79833634604">+7(983) 363-46-04</a></li>
+                            <li><a href="https://wa.me/79833634604">WhatsApp</a></li>
                         </ul>
                     </div>
                     <div class="footer-menu-item">
@@ -456,10 +439,9 @@
                         <ul>
                             <li><a href="#">Политика конфиденциальности</a></li>
                             <li><a href="#">Условия использования</a></li>
-                            <li>ИП Левитина А. Ю.</li>
-                            <li>ИНН 771200491234</li>
-                            <li>ОГРН 1127746001613</li>
-                            <li>Москва, Ленинградский проспект, 36с40, подъезд 2</li>
+                            <li>ИП Переверзева Н.Ю.</li>
+                            <li>ИНН 312827391655</li>
+                            <li>ОГРН 320312300040548</li>
                         </ul>
                     </div>
                 </div>
@@ -494,6 +476,8 @@
     <script src="scripts/popup.js"></script>
     <script src="scripts/lazy.js"></script>
     <script src="scripts/tabs.js"></script>
+    <script src="scripts/main.js"></script>
+
     <script>
         Fancybox.bind("[data-fancybox]", {
             Thumbs: false,

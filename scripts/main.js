@@ -40,7 +40,7 @@ class InitAppScript {
 
     bindScrollLinks() {
         document.addEventListener('click', async (e) => {
-            const link = e.target.closest('.scroll-to');
+            const link = e.target.closest('.goTo');
             if (link) {
                 e.preventDefault();
                 const targetId = link.getAttribute('href').slice(1);
@@ -114,27 +114,7 @@ class InitAppScript {
             }
         });
     }
-    initStikyHeader(){
-        if(this.stickyHeaderInit) return;
-        this.stickyHeaderInit = true;
 
-        this.initSectionObserver()
-        document.addEventListener('scroll', () => {
-            const stikyHeader = document.querySelector('.stiky-header');
-
-            if(!stikyHeader) return;
-
-            const sobs = document.querySelector('.lazy-section[data-template="sobs"]');
-            const showPosition = sobs.getBoundingClientRect().top + window.innerHeight;
-
-            console.log(showPosition)
-            if(showPosition < 0){
-                stikyHeader.style.transform = 'translateY(0)';
-            }else{
-                stikyHeader.style.transform = 'translateY(-100%)';
-            }
-        });
-    }
 
     
     initSectionObserver() {
