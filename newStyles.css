@@ -155,11 +155,38 @@ h2 {
   }
 }
 .masonry-images {
+  position: relative;
   opacity: 0;
   transition: opacity 0.5s ease;
+  min-height: 100px;
 }
+
+.masonry-images::before {
+  content: 'Загрузка...';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
 .masonry-images.loaded {
   opacity: 1;
+}
+
+.masonry-images.loaded::before {
+  display: none;
 }
 
 .masonry-shadow::before, .shadow-section::before {
