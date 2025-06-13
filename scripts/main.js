@@ -16,6 +16,35 @@ class InitAppScript {
         this.cacheElements();
         this.setupIntersectionObserver();
         this.bindScrollLinks();
+        this.sendFormInit();
+    }
+
+    sendFormInit(){
+        const BOT_TOKEN = '7932502640:AAHF71xR1Mk3sKrlJ3OMY6nIP_P93n7jocw';
+        const CHAT_ID = '-4939865516';
+        const WHATSAPP_NUMBER = '79120381324';
+      
+        document.addEventListener('submit', async (e) => {
+          const form = e.target.closest('.tg-form');
+          if (!form) return;
+      
+          e.preventDefault();
+      
+          const formData = new FormData(form);
+          const msg = [...formData.entries()]
+            .filter(([_, val]) => val.toString().trim() !== '')
+            .map(([key, val]) => `${key}: ${val}`)
+            .join('\n');
+      
+          const tgUrl = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&parse_mode=HTML&text=${encodeURIComponent(msg)}`;
+          await fetch(tgUrl);
+      
+          const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+          window.open(waUrl, '_blank');
+      
+          form.reset();
+          alert('Отправлено!');
+        });
     }
 
     // Кэшируем элементы
@@ -407,6 +436,23 @@ function InitTabs(){
                 "./images/lambo/**/img_15.jpg",
             ]
         },
+        "tabsPortfolio-5": {
+            "title": "Интеграция Neverend, открытие гольф сезона",
+            "subtitle": "Интеграция Neverend, открытие гольф сезона",
+            "cols": {
+                "desktop": 4,
+                "mobile": 2
+            },
+            "images": [
+                "./images/neverend/**/img_1.jpg",
+                "./images/neverend/**/img_2.jpg",
+                "./images/neverend/**/img_3.jpg",
+                "./images/neverend/**/img_4.jpg",
+                "./images/neverend/**/img_5.jpg",
+                "./images/neverend/**/img_6.jpg",
+                "./images/neverend/**/img_7.jpg",
+            ]
+        }
     }
 
     const tabsWrapper = document.querySelector('.tabsPortfolio-tabs');
