@@ -471,24 +471,40 @@ function InitTabs(){
     function createTemplate(images, title, cols) {
         const template = document.createElement('div');
         template.classList.add('tabsPortfolio-item');
-        function getImageUrl(image){
-            if(isDesktop){
-                return image.replace('/**/', '/compress/');
-            }else{
-                return image.replace('/**/', '/mobile/');
-            }
-        }
-        function getImageUrlOriginal(image){
-            return image.replace('/**/', '/init/');
-        }
-
-        template.innerHTML = `
-            <div class="masonry-images masonry" style="--cols-desktop: ${cols.desktop}; --cols-mobile: ${cols.mobile};">
-                ${images.map(image => `<a href="${getImageUrlOriginal(image)}" data-fancybox="${title}" class="brick"><img src="${getImageUrl(image)}" /></a>`).join('')}
-            </div>
+      
+        const getImageUrl = (image) =>
+          isDesktop ? image.replace('/**/', '/compress/') : image.replace('/**/', '/mobile/');
+        const getImageUrlOriginal = (image) => image.replace('/**/', '/init/');
+      
+        // создаём HTML с masonry-контейнером
+        const masonryHTML = `
+          <div class="masonry-images masonry" style="--cols-desktop: ${cols.desktop}; --cols-mobile: ${cols.mobile};">
+            ${images.map(image => `<a href="${getImageUrlOriginal(image)}" data-fancybox="${title}" class="brick"><img src="${getImageUrl(image)}" /></a>`).join('')}
+          </div>
         `;
+      
+        // оборачиваем html в DOM-элемент
+        const wrapper = document.createElement('div');
+        wrapper.innerHTML = masonryHTML;
+        const masonry = wrapper.querySelector('.masonry-images');
+      
+        // ждём загрузку всех img внутри masonry
+        const imgElements = [...masonry.querySelectorAll('img')];
+        const promises = imgElements.map(img => {
+          return new Promise((resolve) => {
+            if (img.complete) resolve();
+            else img.onload = img.onerror = () => resolve();
+          });
+        });
+      
+        Promise.all(promises).then(() => {
+          masonry.classList.add('loaded'); // плавно покажем после загрузки
+        });
+      
+        template.appendChild(masonry);
         return template;
-    }
+      }
+      
 
     // Функция для активации таба
     function activateTab(tabId) {
