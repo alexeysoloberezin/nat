@@ -22,7 +22,7 @@ class InitAppScript {
     sendFormInit(){
         const BOT_TOKEN = '7932502640:AAHF71xR1Mk3sKrlJ3OMY6nIP_P93n7jocw';
         const CHAT_ID = '-4939865516';
-        const WHATSAPP_NUMBER = '79120381324';
+        const WHATSAPP_NUMBER = '79833634604';
       
         document.addEventListener('submit', async (e) => {
           const form = e.target.closest('.tg-form');
@@ -32,15 +32,19 @@ class InitAppScript {
       
           const formData = new FormData(form);
           const msg = [...formData.entries()]
-            .filter(([_, val]) => val.toString().trim() !== '')
+            .filter(([key, val]) => key !== 'whatsapp' && val.toString().trim() !== '')
             .map(([key, val]) => `${key}: ${val}`)
             .join('\n');
       
           const tgUrl = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&parse_mode=HTML&text=${encodeURIComponent(msg)}`;
           await fetch(tgUrl);
       
-          const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
-          window.open(waUrl, '_blank');
+          const sendToWhatsapp = form.querySelector('input[name="whatsapp"]')?.checked;
+          if (sendToWhatsapp) {
+            const waText = `Здравствуйте, хочу заказать у вас организацию мероприятия`;
+            const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waText)}`;
+            window.open(waUrl, '_blank');
+          }
       
           form.reset();
           alert('Отправлено!');
@@ -476,7 +480,6 @@ function InitTabs(){
           isDesktop ? image.replace('/**/', '/compress/') : image.replace('/**/', '/mobile/');
         const getImageUrlOriginal = (image) => image.replace('/**/', '/init/');
       
-        // создаём HTML с masonry-контейнером
         const masonryHTML = `
           <div class="masonry-images masonry" style="--cols-desktop: ${cols.desktop}; --cols-mobile: ${cols.mobile};">
             ${images.map(image => `<a href="${getImageUrlOriginal(image)}" data-fancybox="${title}" class="brick"><img src="${getImageUrl(image)}" /></a>`).join('')}
