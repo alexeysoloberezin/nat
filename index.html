@@ -1,15 +1,13 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-
+    <title>8STORIES - Event-агентство</title>
+    <meta name="description" content="8STORIES - Event-агентство">
+    <meta name="keywords" content="8STORIES, Event-агентство, мероприятия, праздники, корпоративы, свадьбы, детские праздники, фотосессии, видеосъемка">
+   <!-- <link rel="stylesheet" href="newStyles.css"> -->
 </head>
 <style>
         .lazy-section {
@@ -29,362 +27,909 @@
         
         .lazy-section.loaded {
             margin: 0;
+            min-height: initial;
         }
         
         .lazy-section.loaded::after {
             content: none;
         }
+
+        a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:"";content:none}table{border-collapse:collapse;border-spacing:0}*{box-sizing:border-box}
+
+        @font-face {
+  font-family: 'CormorantSC';
+  src: url('./fonts/CormorantSC-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CormorantSC';
+  src: url('./fonts/CormorantSC-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CormorantSC';
+  src: url('./fonts/CormorantSC-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+        :root {
+        --primary-color: #c7290a;
+        --white: #fff;
+        --black: #000;
+        --bg: #1a1818;
+        --bg-card: #222020;
+        --font2: "Cormorant SC", serif;
+        --font1: "Montserrat", sans-serif;
+        }
+
+        .text-primary{
+            color: var(--primary-color);
+        }
+        body {
+        color: var(--white);
+        background: var(--bg);
+        font-family: var(--font1);
+        font-optical-sizing: auto;
+        font-size: 16px;
+        font-weight: 400;
+        font-style: normal;
+        }
+        body,
+        html {
+        max-width: 100vw;
+        overflow-x: hidden;
+        width: 100%;
+        height: 100%;
+        }
+        ::-webkit-scrollbar{
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track{
+            background: #222020;
+            border-radius: 10px !important;
+        }
+        ::-webkit-scrollbar-thumb{
+            background: var(--primary-color);
+            border-radius: 10px;
+        }
+
+
+        p {
+        line-height: 1.4;
+        }
+
+        .font2 {
+        font-family: var(--font2);
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+        font-family: var(--font2);
+        }
+
+        .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: rgba(26, 24, 24, 0.8);
+        backdrop-filter: blur(10px);
+        z-index: 100;
+        }
+        .mx-auto {
+        margin: 0 auto;
+        }
+        .mt-4 {
+        margin-top: 20px;
+        }
+        .header-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        }
+        .header-logo {
+        font-size: 30px;
+        font-weight: 700;
+        color: var(--primary-color);
+        font-family: var(--font2);
+        }
+        .header-menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        }
+        @media (max-width: 1200px) {
+        .header-menu {
+            display: none;
+        }
+        }
+        .header-menu ul {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        }
+        .header-menu-link {
+        font-size: 16px;
+        font-weight: 500;
+        text-decoration: none;
+        color: var(--white);
+        }
+        .header-btn {
+        padding: 10px 20px;
+        background: transparent;
+        color: var(--white);
+        text-decoration: none;
+        border: 1px solid var(--primary-color);
+        border-radius: 5px;
+        }
+        body {
+        padding-top: 68px;
+        }
+        section {
+        padding: 100px 0;
+        position: relative;
+        }
+        @media (max-width: 1200px) {
+        section {
+            padding: 40px 0;
+        }
+        }
+        section .container {
+        position: relative;
+        z-index: 2;
+        }
+        * {
+        box-sizing: border-box;
+        }
+
+        .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+        }
+        img {
+        max-width: 100%;
+        }
+        .hero {
+        margin-bottom: 100px;
+        }
+        .hero .container{
+        z-index: 22;
+        position: static;
+        }
+        .hero-svg{
+        position: absolute;
+        top: 0;
+        object-fit: cover;
+        left: 0;
+        height: 100%;
+        transform-origin: left top;
+        transform: scale(0.7);
+        z-index: 1;
+        }
+        .hero-row {
+        display: grid;
+        height: 100%;
+        height: calc(100vh - 68px);
+        grid-template-columns: 1fr 1fr;
+        }
+        .hero .btn{
+        font-size: 20px;
+        
+        }
+
+        h1 {
+        font-size: clamp(70px, 15vw, 150px);
+        font-weight: 500;
+        font-family: var(--font2);
+        }
+        .hero {
+        position: relative;
+        }
+        .hero-img {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        position: absolute;
+        width: 60vw;
+        top: 0;
+        right: 0;
+        z-index: 23;
+        justify-content: center;
+        overflow: hidden;
+        }
+        .hero-content{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 34;
+        justify-content: center;
+        align-items: flex-start;
+        }
+        .hero-img:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 0;
+        border-left: 50vh solid var(--bg); /* Используем 100vh для высоты экрана */
+        border-top: 100vh solid transparent; /* Создаем треугольник вниз */
+        z-index: 2;
+        transform-origin: left top;
+        }
+
+        .hero-row:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 300px;
+        z-index: 30;
+        background: linear-gradient(to top, #1a1818, rgba(26, 24, 24, 0));
+        }
+
+        .hero-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        }
+        .hero h1{
+        margin: 10px 0;
+        }
+        .hero p {
+        font-size: clamp(17px, 2vw, 24px);
+        font-weight: 300;
+        opacity: 0.8;
+        }
+        .hero .btn{
+        margin-top: 30px;
+        font-size: clamp(16px, 2vw, 22px);
+        }
+        .hero .stars{
+        margin-bottom: 10px;
+        }
+        @media (max-width: 1200px) {
+        .hero .btn{
+            margin-top: 15px;
+        }
+        .hero-img::before{
+            content: none;
+        }
+        .hero-row{
+            height: initial;
+        }
+        .hero-img{
+            position: static;
+            margin-top: 40px;
+            max-height: 400px;
+            width: 100%;
+            border-radius: 14px;
+        }
+        .hero-row{
+            grid-template-columns: 1fr;
+        }
+        }
+        .stars{
+        display: flex;
+        flex-direction: row;
+        gap: 7px;
+        margin-top: 20px;
+        opacity: 0.6;
+        }
+        .stars img {
+        max-width: 20px;
+        max-height: 20px;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            font-size: clamp(15px, 2vw, 18px);
+            background: transparent;
+            text-decoration: none;
+            border: none;
+            display: flex;
+            cursor: pointer;
+            width: fit-content;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+        }
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--white);
+        }
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+        .btn-gray {
+            background: #222020;
+            color: var(--white);
+        }
+
+        
+.popup-form{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  justify-content: center;
+}
+.popup-form.active{
+  pointer-events: auto;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.popup-form-container{
+  padding: 30px;
+  width: 500px;
+  max-width: 90vw;
+}
+.footer-logo{
+  font-size: 30px;
+  font-family: var(--font2);
+  color: var(--primary-color);
+}
+.popup-form-container h3{
+  margin-bottom: 20px;
+}
+.popup-form-container .btn{
+  width: 100%;
+}
+.card {
+  background: var(--bg-card);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px  rgba(0, 0, 0, 0.05);
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  background: #141414;
+  border: none;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  color: #fff;
+  font-size: 14px;
+  font-family: var(--font1);
+}
+.form-group input:focus{
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25);
+  outline: none;
+}
+textarea{
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  font-family: var(--font1);
+    max-width: 100%;
+  background: #141414;
+  min-height: 100%;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+textarea:focus{
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25);
+  outline: none;
+}
+h3 {
+  font-size: clamp(26px, 2vw, 34px);
+  font-weight: 400;
+  font-family: var(--font2);
+}
+.text-center {
+  text-align: center;
+}
 </style>
-
-<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
-/>
 <body>
-    <section class="hero" >
-        <img src="./images/hero.png" class="section-bg " alt="">
-        <div class="container">
-            <p>КРЕАТИВНАЯ EVENT-КОМАНДА. <br/> ОРГАНИЗАЦИЯ ПРАЗДНИКОВ, МЕРОПРИЯТИЙ И ТИМБИЛДИНГОВ</p>
-            <h1>8STORIES</h1>
-        </div>
-    </section>
+   
 
-    <div class="stiky-header">
-        <div class="stiky-header-row">
-            <div class="stiky-header-row-left">
-                <a href="#" class="stiky-header-logo">8STORIES |</a>
-                <div class="stiky-header-projects">
-                    Проекты:
+    <header class="header">
+            <div class="header-row">
+                <div class="header-logo">8STORIES</div>
+                <div class="header-menu">
+                    <ul>
+                        <li><a class="header-menu-link goTo" href="#portfolio">Наши проекты</a></li>
+                        <li><a class="header-menu-link goTo" href="#about">О нас</a></li>
+                        <li><a class="header-menu-link goTo" href="#reviewsSection">Отзывы</a></li>
+                        <li><a class="header-menu-link goTo" href="#portfolio">Портфолио</a></li>
+                        <li><a class="header-menu-link goTo" href="#contacts">Контакты</a></li>
+                    </ul>
+                </div>
+                <a href="#" class="header-btn open-popup-form">
+                    Оставить заявку
+                </a>
+        </div>
+    </header>
+
+    <div>
+        <div id="popup-form" class="popup-form"></div>
+
+        <template id="popup-form-template">
+            <div class="popup-form-container card">
+                <h3>Заказать событие</h3>
+                <form class="tg-form" method="POST">
+                    <div class="form-group">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Сообщение</label>
+                        <textarea id="message" name="message"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </form>
+            </div>
+        </template>
+    </div>
+
+    <div class="hero">
+        <svg class="hero-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="1920" height="800" preserveAspectRatio="none" viewBox="0 0 1920 800">
+            <g mask="url(&quot;#SvgjsMask1022&quot;)" fill="none">
+                <rect width="1920" height="800" x="0" y="0" fill="rgba(26, 24, 24, 1)"></rect>
+                <path d="M0,626.571C132.873,655.511,277.295,681.202,399.674,621.905C526.589,560.41,609.723,433.457,665.701,304.015C720.969,176.214,752.598,30.969,712.949,-102.507C675.223,-229.51,548.541,-300.164,457.607,-396.518C371.189,-488.088,310.523,-611.489,192.139,-654.364C71.311,-698.124,-69.294,-685.609,-184.736,-629.152C-293.093,-576.16,-340.792,-454.534,-413.408,-358.22C-480.475,-269.266,-558.092,-190.737,-594.628,-85.495C-637.025,36.629,-699.489,177.566,-639.092,291.864C-578.482,406.564,-416.446,408.994,-301.524,469.181C-199.012,522.869,-113.069,601.944,0,626.571" fill="#151313"></path>
+                <path d="M1920 1490.525C2049.128 1489.1280000000002 2182.576 1440.347 2271.109 1346.336 2353.718 1258.615 2326.942 1118.283 2374.7219999999998 1007.665 2421.051 900.407 2540.482 826.706 2545.969 709.999 2551.701 588.0740000000001 2493.191 463.981 2404.209 380.43 2318.218 299.688 2191.557 292.378 2075.999 268.716 1969.767 246.96400000000006 1860.689 213.423 1757.948 248.101 1656.788 282.246 1602.061 384.37 1522.479 455.546 1428.8229999999999 539.309 1261.5520000000001 578.494 1248.774 703.492 1235.85 829.914 1410.659 892.939 1466.074 1007.3009999999999 1519.519 1117.597 1480.061 1264.653 1563.976 1353.984 1652.798 1448.539 1790.278 1491.9279999999999 1920 1490.525" fill="#1f1d1d"></path>
+            </g>
+            <defs>
+                <mask id="SvgjsMask1022">
+                    <rect width="1920" height="800" fill="#ffffff"></rect>
+                </mask>
+            </defs>
+        </svg>
+        <div class="container">
+            <div class="hero-row">
+                <div class="hero-content">
+                    <div class="stars">
+                        <img src="./images/icons/star.svg" alt="">
+                        <img src="./images/icons/star.svg" alt="">
+                        <img src="./images/icons/star.svg" alt="">
+                        <img src="./images/icons/star.svg" alt="">
+                        <img src="./images/icons/star.svg" alt="">
+                    </div>
+                    <p>Event-агентство</p>
+                    <h1>8STORIES</h1>
+                    <p>Приватные события для тех, <br/>
+                        кто ценит исключительность</p>
+                    <a href="#contacts" class="btn goTo btn-outline">Обсудить ваше мероприятие</a>
+                </div>
+                <div class="hero-img">
+                    <img src="./images/wid/init/066.jpg" alt="">
                 </div>
             </div>
-            <ul>
-                <li><a class="scroll-to stiky-header-link" href="#idea">Идея и визуальный код</a></li>
-                <li><a class="scroll-to stiky-header-link" href="#templateTLR">День Рождения в стиле “Sunset”</a></li>
-                <li><a class="scroll-to stiky-header-link" href="#templateTLR-1">Выездная свадьба</a></li>
-                <li><a class="scroll-to stiky-header-link" href="#templateTLR-2">Гендер-пати</a></li>
-                <li><a class="scroll-to stiky-header-link" href="#templateTLR-3">Ужин для клиентов</a></li>
-            </ul>
         </div>
     </div>
 
+    <div class="lazy-section" data-template="portfolio"></div>
+    <template id="portfolio">
+        <section class="portfolio" id="portfolio">
+            <img class="portfolio-lines" src="./images/icons/lines.svg" alt="" />
+            <div class="container portfolio-container">
+                <div class="section-header">
+                    <h2 class="section-title text-center">КОМАНДА <span class="text-primary">8STORIES</span> ОРГАНИЗУЕТ ДЛЯ ВАС ЭКСКЛЮЗИВНОЕ МЕРОПРИЯТИЕ ПОД КЛЮЧ</h2>
+                </div>
+                
+                <!-- Swiper -->
+                <div class="swiper-container swiper-portfolio">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" style="background-image: url('https://source.unsplash.com/random/800x500/?kids-party,1');">
+                            <div class="slide-content portfolio-item card">
+                                <div class="portfolio-item-img">
+                                    <img src="./images/drnat/mobile/img_1.jpg" alt="">
+                                </div>
+                                <div class="portfolio-item-content">
+                                    <h3>День рождения в русском стиле</h3>
+                                    <p>Изысканная интерпретация национальных традиций</p>
+                                    <p>Погрузитесь в атмосферу настоящего русского праздника — с богатым убранством, живой музыкой, народными мотивами и изысканной подачей. Этот день рождения стал воплощением душевности и щедрости русской культуры в современной элегантной подаче.</p>
+                                    <p>Мы оформили пространство в лучших традициях: вышитые текстильные элементы, хохлома, жостово, теплое дерево и живые цветы. Вечер сопровождался аутентичным музыкальным сопровождением, яркими интерактивами с артистами и современной кухней с тонкими акцентами на традиционные вкусы.</p>
+                                    <div class="portfolio-item-btns">
+                                        <a class="btn btn-primary" href="#">Подробнее</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="background-image: url('https://source.unsplash.com/random/800x500/?kids-party,1');">
+                            <div class="slide-content portfolio-item card">
+                                <div class="portfolio-item-img">
+                                    <img src="./images/wid/mobile/002.jpg" alt="">
+                                </div>
+                                <div class="portfolio-item-content">
+                                    <h3>Свадьба в стиле Sunset Party</h3>
+                                    <p>Когда солнце уходит — начинается магия</p>
+                                    <p>Эта свадьба стала воплощением мечты о бесконечном лете, тёплом ветре, запахе моря и золотом свете уходящего дня. Всё было создано для того, чтобы гости погрузились в атмосферу лёгкости, романтики и безупречного стиля.</p>
+                                    <p>Сценарий вечера был выстроен в ритме солнца: от welcome-коктейлей под мягкий лаунж до свадебной церемонии на фоне закатного неба, где нежные оттенки персика, золота и пудры буквально растворялись в пространстве</p>
+                                    <div class="portfolio-item-btns">
+                                        <a class="btn btn-primary" href="#">Подробнее</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="background-image: url('https://source.unsplash.com/random/800x500/?kids-party,1');">
+                            <div class="slide-content portfolio-item card">
+                                <div class="portfolio-item-img">
+                                    <img src="./images/trends/compress/img_1.jpg" alt="">
+                                </div>
+                                <div class="portfolio-item-content">
+                                    <h3>The Trends Forum</h3>
+                                    <p>Ведущий международная выставка новейших технологии.</p>
+                                    <p>Форум собрал лидеров финансового сектора, инвесторов, основателей стартапов и представителей высокотехнологичных компаний. Мы создали деловую платформу нового уровня — с безупречной организацией, продуманным пространством и современным визуальным кодом.</p>
+                                    <div class="portfolio-item-btns">
+                                        <a class="btn btn-primary" href="#">Подробнее</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="background-image: url('https://source.unsplash.com/random/800x500/?kids-party,1');">
+                            <div class="slide-content portfolio-item card">
+                                <div class="portfolio-item-img">
+                                    <img src="./images/neverend/compress/img_3.jpg" alt="">
+                                </div>
+                                <div class="portfolio-item-content">
+                                    <h3>Интеграция Neverend, открытие гольф сезона</h3>
+                                    <p>Элегантность игры. Привилегия круга.</p>
+                                    <p>Открытие гольф-сезона — не просто спортивное событие, а знаковый gathering для тех, кто ценит стиль, статус и безупречный сервис. Мы создали пространство, в котором спорт встречается с высоким обществом, деловые связи — с лёгкостью загородного уикенда, а атмосфера — с настоящей эстетикой игры.</p>
+                                    <div class="portfolio-item-btns">
+                                        <a class="btn btn-primary" href="#">Подробнее</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="background-image: url('https://source.unsplash.com/random/800x500/?kids-party,1');">
+                            <div class="slide-content portfolio-item card">
+                                <div class="portfolio-item-img">
+                                    <img src="./images/lambo/mobile/img_10.jpg" alt="">
+                                </div>
+                                <div class="portfolio-item-content">
+                                    <h3>Интеграция travel-компании на закрытом мероприятии Lamborghini</h3>
+                                    <p>Искусство скорости. Энергия исключительности.</p>
+                                    <p>Вечер, где не звучали случайные имена. Только те, кто чувствует вибрацию мощности с первого взгляда и отличает силу от громкости. Закрытое мероприятие Lamborghini — это не про автомобили. Это про образ жизни.</p>
+                                    <div class="portfolio-item-btns">
+                                        <a class="btn btn-primary" href="#">Подробнее</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" style="background-image: url('https://source.unsplash.com/random/800x500/?kids-party,1');">
+                            <div class="slide-content portfolio-item card">
+                                <div class="portfolio-item-img">
+                                    <img src="./images/trends/compress/img_1.jpg" alt="">
+                                </div>
+                                <div class="portfolio-item-content">
+                                    <h3>Воздушный Бал — пространство вне времени.</h3>
+                                    <p>Здесь всё дышит лёгкостью: полупрозрачные ткани, приглушённый свет, шёпот музыки и мечты на воздушных шарах.</p>
+                                    <p>Каждое движение — как танец, каждый гость — как иллюзия.</p>
+                                    <p>Это не вечер. Это чувство. Воздушное, едва уловимое, настоящее.</p>
+                                    <div class="portfolio-item-btns">
+                                        <a class="btn btn-primary" href="#">Подробнее</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-portfolio-pagination swiper-pagination"></div>
+                    <div class="swiper-portfolio-button-next swiper-button-next"></div>
+                    <div class="swiper-portfolio-button-prev swiper-button-prev"></div>
+                </div>
+                
+             
+            </div>
+    
+            <a href="#tabsPortfolio" class="btn goTo btn-outline mx-auto mt-4">Все проекты</a>
+        </section>
+    </template>
+     
+
+    <div class="lazy-section" data-template="images"></div>
+    <template id="images">
+        <section class="">
+            <div class="masonry ">
+                <a href="./images/wid/init/001.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/001.jpg" /></a>
+                <a href="./images/wid/init/002.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/002.jpg" /></a>
+                <a href="./images/wid/init/004.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/004.jpg" /></a>
+                <a href="./images/wid/init/005.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/005.jpg" /></a>
+                <a href="./images/wid/init/011.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/011.jpg" /></a>
+                <a href="./images/wid/init/040.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/040.jpg" /></a>
+                <a href="./images/wid/init/066.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/066.jpg" /></a>
+                <a href="./images/wid/init/088.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/088.jpg" /></a>
+                <a href="./images/wid/init/112.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/112.jpg" /></a>
+                <a href="./images/wid/init/142.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/142.jpg" /></a>
+                <a href="./images/wid/init/145.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/145.jpg" /></a>
+                <a href="./images/wid/init/198.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/198.jpg" /></a>
+                <a href="./images/wid/init/202.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/202.jpg" /></a>
+                <a href="./images/wid/init/215.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/215.jpg" /></a>
+          </div>
+        </section>
+    </template>
+
+
     <div class="lazy-section" data-template="about"></div>
     <template id="about">
-        <section class="about">
-            <div class="about-l">
-                <img src="./images/about_1.JPG" alt="">
-                <img src="./images/about_2.JPG" alt="">
-            </div>
-            <div class="about-r" style="background-image: url('./images/about_fon.png');">
-                <h3>ПРИВЕТСТВУЕМ! <br/>
-                    ЭТО ЕРЕМИНА ЕЛЕНА <br/>
-                    И ПЕРЕВЕРЗЕВ АНАТАЛЬЯ</h3>
-                <div class="about-r-text">
-                    <p>Мы вместе с нашей командой более 3х лет
-                        организовываем мероприятия</p>
-                    <p>[дни рождения, корпоративы,
-                        b2b-ивенты,презентации, VIP-ужины и закрытые
-                        мероприятия]</p>
+        <section class="about shadow-section" id="about">
+        <svg class="about-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="1920" height="800" preserveAspectRatio="none" viewBox="0 0 1920 800">
+            <g mask="url(&quot;#SvgjsMask1018&quot;)" fill="none">
+                <rect width="1920" height="800" x="0" y="0" fill="rgba(26, 24, 24, 1)"></rect>
+                <path d="M0,540.698C100.261,528.938,179.956,463.613,273.401,425.421C392.539,376.729,547.856,388.507,624.802,285.337C702.552,181.089,699.132,29.397,661.633,-95.128C626.18,-212.862,524.696,-295.182,427.365,-370.314C344.359,-434.389,241.508,-452.841,145.026,-493.912C33.05,-541.579,-68.909,-666.628,-185.315,-631.125C-301.982,-595.542,-299.876,-421.071,-383.849,-332.607C-474.055,-237.577,-651.992,-224.567,-690.202,-99.236C-727.75,23.922,-632.109,148.348,-563.743,257.453C-502.023,355.952,-421.848,442.603,-317.982,494.789C-220.31,543.863,-108.563,553.432,0,540.698" fill="#151313"></path>
+                <path d="M1920 1457.766C2052.384 1443.92 2188.217 1462.1019999999999 2307.338 1402.7089999999998 2434.282 1339.4160000000002 2552.556 1244.779 2608.56 1114.455 2664.1040000000003 985.2 2603.515 841.532 2608.901 700.951 2615.805 520.736 2746.748 320.749 2644.665 172.07399999999996 2544.831 26.673999999999978 2323.058 31.798999999999978 2146.728 27.833999999999946 1998.737 24.505999999999972 1870.455 106.02999999999997 1729.583 151.49800000000005 1593.268 195.495 1442.438 199.19000000000005 1332.252 290.713 1212.3319999999999 390.322 1099.354 525.246 1092.144 680.972 1085.024 834.757 1229.328 946.196 1295.467 1085.215 1360.243 1221.368 1347.353 1412.325 1476.841 1489.568 1606.659 1567.008 1769.659 1473.49 1920 1457.766" fill="#1f1d1d"></path>
+            </g>
+            <defs>
+                <mask id="SvgjsMask1018">
+                    <rect width="1920" height="800" fill="#ffffff"></rect>
+                </mask>
+            </defs>
+        </svg>
+        <h2 class="text-center section-title">ВЛЮБЛЕННЫЕ <br/> В СВОЕ ДЕЛО ПРОФЕССИОНАЛЫ</h2>
+        <div class="container">
+            <div class="about-wrp">
+                <div class="about-l">
+                    <div class="about-l-img-2">
+                        <img src="./images/about_2.JPG" alt="">
+                    </div>
+                    <div class="about-l-img-1">
+                        <img src="./images/about_1.JPG" alt="">
+                    </div>
+                </div>
+                <div class="about-r">
+                    <div class="info-grid">
+                        <div class="info-block">
+                          <h4 class="lg">5</h4>
+                          <p>лет опыта организации уникальных мероприятий и праздников в Москве и за ее пределами</p>
+                        </div>
+                        <div class="info-block">
+                          <h4 class="lg">350+</h4>
+                          <p>эксклюзивных мероприятий для самых взыскательных клиентов, включая медийных личностей</p>
+                        </div>
+                      
+                        <div class="info-full">
+                          <h4>ВЫСОКОПРОФЕССИОНАЛЬНО</h4>
+                          <p>Высоко профессионально выполняем каждую деталь, создавая идеальную атмосферу.</p>
+                        </div>
+                      </div>
+                      
+                </div>
                 </div>
             </div>
         </section>
     </template>
 
-   
-    <div class="lazy-section" data-template="how"></div>
-    <template id="how">
-        <section class="how">
+
+    
+    <div class="lazy-section" data-template="reviewsSection"></div>
+    <template id="reviewsSection">
+        <section class="reviews" id="reviewsSection">
+            <img src="./images/icons/lines.svg" alt="" class="reviews-lines">
             <div class="container">
-                <h2>О НАС</h2>
+                <h2 class="text-center section-title">ОТЗЫВЫ И ЭМОЦИИ <br/> НАШИХ ГОСТЕЙ</h2>
+                <div class="container reviews-container">
+                    <div class="swiper-container swiper-reviews">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="./images/reviews/rev_1.jpg" data-fancybox="reviews" class="slide-content review-item card">
+                                   <img src="./images/reviews/rev_1.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="./images/reviews/rev_2.jpg" data-fancybox="reviews" class="slide-content review-item card">
+                                   <img src="./images/reviews/rev_2.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="./images/reviews/rev_3.jpg" data-fancybox="reviews" class="slide-content review-item card">
+                                   <img src="./images/reviews/rev_3.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="./images/reviews/rev_4.jpg" data-fancybox="reviews" class="slide-content review-item card">
+                                   <img src="./images/reviews/rev_4.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="./images/reviews/rev_5.jpg" data-fancybox="reviews" class="slide-content review-item card">
+                                   <img src="./images/reviews/rev_5.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="./images/reviews/rev_6.jpg" data-fancybox="reviews" class="slide-content review-item card">
+                                   <img src="./images/reviews/rev_6.jpg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-reviews-pagination swiper-pagination"></div>
+                        <div class="swiper-reviews-button-next swiper-button-next"></div>
+                        <div class="swiper-reviews-button-prev swiper-button-prev"></div>
+                    </div>
+                </div>
             </div>
-            <div class="container">
-                <p class="how-text text-primary">Наша команда 8stories — это архитектор впечатлений,
-                    который помогает вам прокладывать путь между
-                    мечтой и реальностью, превращая хаос в
-                    гармонию событий. В моих руках тайминги
-                    становятся союзником, а каждая деталь, — штрихом
-                    на холсте незабываемого опыта.
-                </p>
-            </div>
-            <div class="container">
-                <h2>КАК?</h2>
-                <p class="how-text-2">мы разрабатываем любую концепцию
-                    мероприятия по вашему бюджету и
-                    реализовываем в быстрые сроки</p>
-            </div>
-            <img src="./images/wine.png" class="how-wine" alt="">
         </section>
+
     </template>
 
-    <div class="lazy-section" data-template="weCreate"></div>
-    <template id="weCreate">
-        <section class="weCreate">
-            <img src="/images/template.jpg" class="section-bg grayscale" alt="">
-            <div class="container">
-                <h2>МЫ СОЗДАЕМ:</h2>
-                <ul class="weCreate-list">
-                    <li>выездные мероприятия</li>
-                    <li>мероприятия в Москве и Подмосковье</li>
-                    <li>мероприятия от 2 до 200 человек</li>
-                    <li>создаём концептуальные мероприятия со своим лоском,</li>
-                    <li>где вы или ваши клиенты будут в восторге!</li>
-                    <li>обсуждаем концепцию совместно с вами на живой встрече или по Zoom</li>
-                </ul>
-            </div>
-        </section>
-    </template>
 
-    <div class="lazy-section" data-template="sobs"></div>
-    <template id="sobs">
-        <section class="sobs">
-            <img src="/images/sobs.png" class="section-bg " alt="">
-            <div class="container">
-                <h4 class="sobs-title">НАШИ <br/>СОБЫТИЯ</h4>
-                <ul class="sobs-list">
-                <li><a class="scroll-to" href="#idea">Идея и визуальный код</a></li>
-                <li><a class="scroll-to" href="#templateTLR">День Рождения в стиле “Sunset”</a></li>
-                <li><a class="scroll-to" href="#templateTLR-1">Выездная свадьба</a></li>
-                <li><a class="scroll-to" href="#templateTLR-2">Гендер-пати</a></li>
-                <li><a class="scroll-to" href="#templateTLR-3">Ужин для клиентов</a></li>
-                </ul>
-            </div>
-        </section>
-      
-    </template>
-
-    <div class="lazy-section" data-template="project"></div>
-    <template id="project">
-        <section class="project">
-            <img src="./images/template.jpg" class="project-img" alt="">
-            <div class="project-l" style="background-image: url('./images/template.jpg');"></div>
-            <div class="project-r">
-            <h3 class="project-title">Режиссёры + <br/>Организаторы</h3>
-            <p class="project-text">
-                <em>Вип-ужин для гостей ЖК ICONIC<br>
-                От создания концепции до реализации</em>
-            </p>
-            
-            <h3 class="project-subtitle">Проект ICONIC</h3>
-            
-            <ul class="project-list">
-                <li>поиск и подбор площадки в ОАЭ</li>
-                <li>общение с подрядчиками</li>
-                <li>составление смет</li>
-                <li>создание питчингов и презентаций</li>
-                <li>для клиентов</li>
-                </ul>
-            </div>
-        </section>
-        <section class="photos">
-            <div>
-                <img src="./images/template.jpg" alt="">
-                <img src="./images/template.jpg" alt="">
-            </div>
-            <div>
-                <img src="./images/template.jpg" alt="">
-                <img src="./images/template.jpg" alt="">
-            </div>
-            <div>
-                <img src="./images/template.jpg" alt="">
-                <img src="./images/template.jpg" alt="">
-            </div>
-            <div>
-                <img src="./images/template.jpg" alt="">
-                <img src="./images/template.jpg" alt="">
-            </div>
-        </section>
-    </template>
-
-    <div class="lazy-section" data-template="idea"></div>
-    <template id="idea">
-        <section class="idea">
-            <div class="idea-l">
-                <h2>ИДЕЯ И <br/>ВИЗУАЛЬНЫЙ КОД</h2>
-
-                <p>Концепция проекта ICONIC - это новая эра роскоши и&nbsp;креативности. Иммерсивный опыт через геймификацию участников.</p>
-
-                <p>Мы смешали космические метавселенные и итальянский шарм с&nbsp;культурными легендами, такими как Моника Беллуччи и&nbsp;Федерико Феллини.</p>
-
-                <p>2 дня исключительного гастрономического путешествия в мир итальянской кухни, сопровождающееся увлекательным шоу.</p>
-
-            </div>
-            <div class="idea-r" style="background-image: url('./images/template.jpg');">
-            </div>
-        </section>
-        <section class="six">
-            <div class="six-l" style="background-image: url('./images/template.jpg');">
-            </div>
-            <div class="six-r" style="background-image: url('./images/template.jpg');">
-            <div>
-            <h3>МЫ УВЛЕКАЕМСЯ МОДОЙ И&nbsp;СТИЛЕМ, ЧТО ДАЁТ ВЫСОКИЙ УРОВЕНЬ НАСМОТРЕННОСТИ</h3>
-
-            </div>
-        </div>
-    </section>
-    </template>
-   
-
-    <div class="lazy-section" data-template="templateTLR"></div>
-    <template id="templateTLR">
-        <section class="templateTLR">
-            <div class="templateTLR-l">
-                <h2>День Рождения в&nbsp;стиле “Sunset”</h2>
-                <h4>Организация дня рождения с&nbsp;концепцией вечеринки на&nbsp;закате</h4>
-                <ul>
-                    <li>контроль выполнения работ подрядчиков (артисты, фотографы, видеографы, декор, световик, кейтеринг)</li>
-                    <li>встреча гостей</li>
-                    <li>контроль за исполнением таймингов</li>
-                    <li>помощь гостям и создание комфортных условий для каждого участника мероприятия</li>
-                    <li>подъём контента</li>
-                </ul>
-            </div>
-            <div class="templateTLR-r" style="background-image: url('./images/template.jpg');">
-            </div>
-        </section>
-        <section style="background-image: url('./images/template.jpg');">
-        </section>
-        <section class="photosSection">
-            <div>
-                <img src="./images/template.jpg" alt="">
-            </div>
-            <div>
-                <img src="./images/template.jpg" alt="">
-                <img src="./images/template.jpg" alt="">
-            </div>
-            <div>
-                <img src="./images/template.jpg" alt="">
-            </div>
-        </section>
-        <section class="photosSection_2">
-            <div>
-                <img src="./images/template.jpg" alt="">
-                <img src="./images/template.jpg" alt="">
-            </div>
-            <div>
-                <img src="./images/template.jpg" alt="">
-                <img src="./images/template.jpg" alt="">
-            </div>
-            <div>
-                <img src="./images/template.jpg" alt="">
-                <img src="./images/template.jpg" alt="">
-            </div>
-        </section>
-    </template>
-
-    <div class="lazy-section" data-template="templateTLR-1"></div>
-    <template id="templateTLR-1">
-        <section class="templateTLR">
-                <div class="templateTLR-l">
-                <h2>Выездная <br/>свадьба</h2>
-                <h4>Организация камерной <br/>свадьбы в Абу-Даби</h4>
-                <ul>
-                <li>поиск площадки</li>
-                <li>подбор подрядчиков в ОАЭ</li>
-                <li>составление концепции свадьбы</li>
-                <li>согласование отрисовки эскизов декора площадки</li>
-                <li>размещение гостей в доме, организация всего отдыха для гостей (3 дня)</li>
-                </ul>
-                <a class="button mt-6" data-fancybox="templateTLR-1" href="./images/wid/001.jpg">Открыть галерею</a>
-            </div>
-            <div class="templateTLR-r" style="background-image: url('./images/wid/001.jpg');">
-            </div>
-        </section>
-        <section class="threeImages">
-            <img data-fancybox="templateTLR-1" href="./images/wid/002.jpg" src="./images/wid/002.jpg" alt="">
-            <img data-fancybox="templateTLR-1" href="./images/wid/004.jpg" src="./images/wid/004.jpg" alt="">
-            <img data-fancybox="templateTLR-1" href="./images/wid/005.jpg" src="./images/wid/005.jpg" alt="">
-        </section>
-        <section class="threeImages withPadding">
-            <img data-fancybox="templateTLR-1" href="./images/wid/011.jpg" src="./images/wid/011.jpg" alt="">
-            <img data-fancybox="templateTLR-1" href="./images/wid/040.jpg" src="./images/wid/040.jpg" alt="">
-            <img data-fancybox="templateTLR-1" href="./images/wid/041.jpg" src="./images/wid/041.jpg" alt="">
-        </section>
-        <section class="threeImages withPadding">
-            <img data-fancybox="templateTLR-1" href="./images/wid/066.jpg" src="./images/wid/066.jpg" alt="">
-            <img data-fancybox="templateTLR-1" href="./images/wid/088.jpg" src="./images/wid/088.jpg" alt="">
-            <img data-fancybox="templateTLR-1" href="./images/wid/112.jpg" src="./images/wid/112.jpg" alt="">
-        </section>
-        <section class="photosSection_2">
-            <div>
-                <img data-fancybox="templateTLR-1" href="./images/wid/142.jpg" src="./images/wid/142.jpg" alt="">
-                <img data-fancybox="templateTLR-1" href="./images/wid/145.jpg" src="./images/wid/145.jpg" alt="">
-            </div>
-            <div>
-                <img data-fancybox="templateTLR-1" href="./images/wid/198.jpg" src="./images/wid/198.jpg" alt="">
-                <img data-fancybox="templateTLR-1" href="./images/wid/202.jpg" src="./images/wid/202.jpg" alt="">
-            </div>
-            <div>
-                <img data-fancybox="templateTLR-1" href="./images/wid/210.jpg" src="./images/wid/210.jpg" alt="">
-                <img data-fancybox="templateTLR-1" href="./images/wid/215.jpg" src="./images/wid/215.jpg" alt="">
-            </div>
-        </section>
-    </template>
-
-    <div class="lazy-section" data-template="templateTLR-2"></div>
-    <template id="templateTLR-2">
-        <section class="templateTLR">
-            <div class="templateTLR-l">
-            <h2>Гендер-пати</h2>
-            <h4>Организация гендер-пати для семьи будущего мальчика</h4>
-            <ul>
-              <li>режиссура мероприятия</li>
-              <li>поиск площадки</li>
-              <li>составление концепции</li>
-              <li>работа с подрядчиками</li>
-              <li>согласование отрисовки эскизов декора площадки</li>
-              <li>проведение мероприятия</li>
-            </ul>
-            <a class="button mt-6" data-fancybox="templateTLR-3" href="./images/gender/img1.jpg">Открыть галерею</a>
-            <img data-fancybox="templateTLR-3" href="./images/gender/img5.jpg" style="display: none;" src="./images/gender/img5.jpg" alt="">
-        </div>
-            <div class="templateTLR-r" style="background-image: url('./images/gender/img1.jpg');">
-            </div>
-        </section>
-        <section class="threeImages withPadding">
-            <img data-fancybox="templateTLR-3" href="./images/gender/img2.jpg" src="./images/gender/img2.jpg" alt="">
-            <img data-fancybox="templateTLR-3" href="./images/gender/img3.jpg" src="./images/gender/img3.jpg" alt="">
-            <img data-fancybox="templateTLR-3" href="./images/gender/img4.jpg" src="./images/gender/img4.jpg" alt="">
-        </section>
-    </template>
-
-    <div class="lazy-section" data-template="templateTLR-3"></div>
-    <template id="templateTLR-3">
-        <section class="templateTLR">
-            <div class="templateTLR-l">
-            <h2>Ужин для клиентов</h2>
-            <h4>Организация ужина <br/>для VAQUERA BRAND</h4>
-            <ul>
-                <li>режиссура мероприятия</li>
-                <li>поиск площадки</li>
-                <li>составление концепции</li>
-                <li>работа с подрядчиками</li>
-                <li>согласование отрисовки эскизов декора площадки</li>
-                <li>проведение мероприятия</li>
-            </ul>
+    <div class="lazy-section" data-template="tabsPortfolio"></div>
+    <template id="tabsPortfolio">
+        <section class="tabsPortfolio shadow-section" id="portfolio">
+            <div class="light-lines">
 
         </div>
-            <div class="templateTLR-r" style="background-image: url('./images/template.jpg');">
+        <div style="position: relative; z-index: 25;">
+            <h2 class="text-center">Наши яркие мероприятия</h2>
+            <p class="text-center section-subtitle">Мы создаем мероприятия, которые оставят незабываемые впечатления. Наши проекты — это не просто события, а настоящие шедевры, которые создаются с любовью и профессионализмом.</p>
+        
+        </div>
+        <div class="tabsPortfolio-tabs">
+        </div>     
+            <div class="tabsPortfolio-content"  style="position: relative; z-index: 25;"> </div>
+        </section>
+    </template>
+
+
+    <div class="lazy-section" data-template="contacts"></div>
+    <template id="contacts">
+        <section class="form" id="contacts">
+            <svg class="about-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="1920" height="800" preserveAspectRatio="none" viewBox="0 0 1920 800">
+                <g mask="url(&quot;#SvgjsMask1018&quot;)" fill="none">
+                    <rect width="1920" height="800" x="0" y="0" fill="rgba(26, 24, 24, 1)"></rect>
+                    <path d="M0,540.698C100.261,528.938,179.956,463.613,273.401,425.421C392.539,376.729,547.856,388.507,624.802,285.337C702.552,181.089,699.132,29.397,661.633,-95.128C626.18,-212.862,524.696,-295.182,427.365,-370.314C344.359,-434.389,241.508,-452.841,145.026,-493.912C33.05,-541.579,-68.909,-666.628,-185.315,-631.125C-301.982,-595.542,-299.876,-421.071,-383.849,-332.607C-474.055,-237.577,-651.992,-224.567,-690.202,-99.236C-727.75,23.922,-632.109,148.348,-563.743,257.453C-502.023,355.952,-421.848,442.603,-317.982,494.789C-220.31,543.863,-108.563,553.432,0,540.698" fill="#151313"></path>
+                    <path d="M1920 1457.766C2052.384 1443.92 2188.217 1462.1019999999999 2307.338 1402.7089999999998 2434.282 1339.4160000000002 2552.556 1244.779 2608.56 1114.455 2664.1040000000003 985.2 2603.515 841.532 2608.901 700.951 2615.805 520.736 2746.748 320.749 2644.665 172.07399999999996 2544.831 26.673999999999978 2323.058 31.798999999999978 2146.728 27.833999999999946 1998.737 24.505999999999972 1870.455 106.02999999999997 1729.583 151.49800000000005 1593.268 195.495 1442.438 199.19000000000005 1332.252 290.713 1212.3319999999999 390.322 1099.354 525.246 1092.144 680.972 1085.024 834.757 1229.328 946.196 1295.467 1085.215 1360.243 1221.368 1347.353 1412.325 1476.841 1489.568 1606.659 1567.008 1769.659 1473.49 1920 1457.766" fill="#1f1d1d"></path>
+                </g>
+                <defs>
+                    <mask id="SvgjsMask1018">
+                        <rect width="1920" height="800" fill="#ffffff"></rect>
+                    </mask>
+                </defs>
+            </svg>
+            <div class="container">
+                <div class="form-wrp">
+                    <div class="left-section">
+                        <div class="logo">8STORIES</div>
+                        <div class="contact contact-1">СВЯЖИТЕСЬ С НАМИ ЛЮБЫМ УДОБНЫМ СПОСОБОМ</div>
+                        <a href="mailto:8storiesevent@gmail.com" class="contact link">8storiesevent@gmail.com</a>
+                        <a href="tel:+79833634604" class="contact link">+7(983) 363-46-04</a>
+                    </div>
+                    <div class="right-section card">
+                        <h3 class="form-title">ЗАКАЗАТЬ СОБЫТИЕ</h3>
+                        <form class="tg-form" method="POST">
+                            <div class="form-group">
+                                <label for="name">Имя</label>
+                                <input type="text" id="name" name="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Телефон</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="callback">Неколько слов о событии</label>
+                                <input type="text" id="callback" name="callback">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Отправить</button>
+                        </form>
+                    </div>
+                </div>
+               
             </div>
         </section>
     </template>
+
+
 
     <div class="lazy-section" data-template="footer"></div>
     <template id="footer">
-        <footer class="footer" style="background-image: url('./images/template.jpg');">
-                <div class="overlay"></div>
-                <div class="container footer-wrp">
-                <div>
-                    <h5>Обсудить ваше событие <br/> и&nbsp;забронировать дату</h5>
-                </div>
-                <div>
-                    <a href="tel:+79833634604">+79833634604</a>
-                    <a href="tel:+79162888131">+79162888131</a>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-row">
+                    <div class="footer-logo">8STORIES</div>
+                    <div class="footer-menu">
+                        <div class="footer-menu-item">
+                            <h4>Меню</h4>
+                            <ul>
+                                <li><a class="goTo" href="#portfolio">Наши проекты</a></li>
+                                <li><a class="goTo" href="#about">О нас</a></li>
+                                <li><a class="goTo" href="#reviewsSection">Отзывы</a></li>
+                                <li><a class="goTo" href="#portfolio">Портфолио</a></li>
+                                <li><a class="goTo" href="#contacts">Контакты</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-menu-item">
+                            <h4>Контакты</h4>
+                            <ul>
+                                <li><a href="mailto:8storiesevent@gmail.com">8storiesevent@gmail.com</a></li>
+                                <li><a href="tel:+79833634604">+7(983) 363-46-04</a></li>
+                                <li><a href="https://wa.me/79833634604">WhatsApp</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-menu-item">
+                            <h4>Документы</h4>
+                            <ul>
+                                <li><a href="#">Политика конфиденциальности</a></li>
+                                <li><a href="#">Условия использования</a></li>
+                                <li>ИП Переверзева Н.Ю.</li>
+                                <li>ИНН 312827391655</li>
+                                <li>ОГРН 320312300040548</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </footer>
     </template>
 
+  
+
+
+  
+
+
+    
+    <script src="scripts/popup.js"></script>
     <script src="scripts/lazy.js"></script>
+    <script src="scripts/tabs.js"></script>
     <script src="scripts/main.js"></script>
+
+    <script>
+       
+    </script>
 </body>
 </html>
