@@ -168,10 +168,12 @@
         padding: 15px;
         }
         .header-logo {
-        font-size: 30px;
-        font-weight: 700;
-        color: var(--primary-color);
-        font-family: var(--font2);
+            width: 170px;
+        }
+        @media (max-width: 800px) {
+            .header-logo {
+                width: 135px;
+            }
         }
         .header-menu {
         display: flex;
@@ -257,6 +259,9 @@
         font-size: 20px;
         
         }
+        .hero h1 img{
+            width: 650px;
+        }
 
         h1 {
         font-size: clamp(70px, 15vw, 150px);
@@ -302,6 +307,7 @@
         .hero-row:before {
         content: "";
         position: absolute;
+        pointer-events: none;
         bottom: 0;
         left: 0;
         width: 100%;
@@ -339,9 +345,10 @@
         }
         .hero-row{
             height: initial;
+            display: block;
         }
         .hero-img{
-            position: static;
+            position: relative;
             margin-top: 40px;
             max-height: 400px;
             width: 100%;
@@ -594,7 +601,9 @@ h3 {
 
     <header class="header">
             <div class="header-row">
-                <div class="header-logo">8STORIES</div>
+                <div class="header-logo">
+                    <img src="./images/logo.svg" alt="">
+                </div>
                 <div class="header-menu">
                     <ul>
                         <li><a class="header-menu-link goTo" href="#portfolio">Наши проекты</a></li>
@@ -673,17 +682,130 @@ h3 {
                         <img src="./images/icons/star.svg" alt="">
                     </div>
                     <p>Event-агентство</p>
-                    <h1>8STORIES</h1>
+                    <h1>
+                        <img src="./images/logo.svg" alt="">
+                    </h1>
                     <p>Приватные события для тех, <br/>
                         кто ценит исключительность</p>
                     <a href="#contacts" class="btn goTo btn-outline">Обсудить ваше мероприятие</a>
                 </div>
                 <div class="hero-img">
-                    <img src="./images/wid/init/066.jpg" alt="">
+                    <img src="./images/wid/init/215.jpg" alt="">
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="lazy-section" data-template="about"></div>
+    <template id="about">
+        <section class="about shadow-section" id="about">
+        <svg class="about-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="1920" height="800" preserveAspectRatio="none" viewBox="0 0 1920 800">
+            <g mask="url(&quot;#SvgjsMask1018&quot;)" fill="none">
+                <rect width="1920" height="800" x="0" y="0" fill="rgba(26, 24, 24, 1)"></rect>
+                <path d="M0,540.698C100.261,528.938,179.956,463.613,273.401,425.421C392.539,376.729,547.856,388.507,624.802,285.337C702.552,181.089,699.132,29.397,661.633,-95.128C626.18,-212.862,524.696,-295.182,427.365,-370.314C344.359,-434.389,241.508,-452.841,145.026,-493.912C33.05,-541.579,-68.909,-666.628,-185.315,-631.125C-301.982,-595.542,-299.876,-421.071,-383.849,-332.607C-474.055,-237.577,-651.992,-224.567,-690.202,-99.236C-727.75,23.922,-632.109,148.348,-563.743,257.453C-502.023,355.952,-421.848,442.603,-317.982,494.789C-220.31,543.863,-108.563,553.432,0,540.698" fill="#151313"></path>
+                <path d="M1920 1457.766C2052.384 1443.92 2188.217 1462.1019999999999 2307.338 1402.7089999999998 2434.282 1339.4160000000002 2552.556 1244.779 2608.56 1114.455 2664.1040000000003 985.2 2603.515 841.532 2608.901 700.951 2615.805 520.736 2746.748 320.749 2644.665 172.07399999999996 2544.831 26.673999999999978 2323.058 31.798999999999978 2146.728 27.833999999999946 1998.737 24.505999999999972 1870.455 106.02999999999997 1729.583 151.49800000000005 1593.268 195.495 1442.438 199.19000000000005 1332.252 290.713 1212.3319999999999 390.322 1099.354 525.246 1092.144 680.972 1085.024 834.757 1229.328 946.196 1295.467 1085.215 1360.243 1221.368 1347.353 1412.325 1476.841 1489.568 1606.659 1567.008 1769.659 1473.49 1920 1457.766" fill="#1f1d1d"></path>
+            </g>
+            <defs>
+                <mask id="SvgjsMask1018">
+                    <rect width="1920" height="800" fill="#ffffff"></rect>
+                </mask>
+            </defs>
+        </svg>
+        <h2 class="text-center section-title">ПРИВЕТСТВУЕМ! <br/>
+            ЭТО <span class="text-primary">ЕРЕМИНА ЕЛЕНА</span>
+            И <span class="text-primary">ПЕРЕВЕРЗЕВА НАТАЛИЯ</span></h2>
+        <div class="container">
+            <div class="about-wrp">
+                <div class="about-l">
+                    <div class="about-l-img-2">
+                        <img src="./images/about_2.JPG" alt="">
+                    </div>
+                    <div class="about-l-img-1">
+                        <img src="./images/about_1.JPG" alt="">
+                    </div>
+                </div>
+                <div class="about-r">
+                    <div class="about-txt">
+                        Наша команда 8stories — архитектор впечатлений,
+                        который помогает вам прокладыватьпуть между
+                        мечтой и реальностью,превращая хаос и дейв
+                        гармонию событий. В моих руках тайминги
+                        становятся союзником, а каждая деталь, — штрихом
+                        на холсте не забываемого опыта.
+
+                    </div>
+                    <div class="about-txt  font-medium">
+                        Мы разрабатываем любую концепцию
+                        мероприятия под ваш бюджет и
+                        реализовываем в быстрые сроки
+
+                    </div>
+                    <div class="info-grid">
+                        <div class="info-block">
+                          <h4 class="lg">5</h4>
+                          <p>лет опыта организации уникальных мероприятий и праздников в Москве и за ее пределами</p>
+                        </div>
+                        <div class="info-block">
+                          <h4 class="lg">350+</h4>
+                          <p>эксклюзивных мероприятий для самых взыскательных клиентов, включая медийных личностей</p>
+                        </div>
+                      
+                        <div class="info-full">
+                          <h4>ВЫСОКОПРОФЕССИОНАЛЬНО</h4>
+                          <p>Высокопрофессионально выполняем каждую деталь, создавая идеальную атмосферу.</p>
+                        </div>
+                      </div>
+                      
+                </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <div class="weCan">
+        <div class="container">
+          <h2 class="text-center">МЫ СОЗДАЕМ:</h2>
+          <div class="weCan-list grid">
+            <div class="weCan-item">
+              <div class="weCan-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plane-takeoff-icon lucide-plane-takeoff"><path d="M2 22h20"/><path d="M6.36 17.4 4 17l-2-4 1.1-.55a2 2 0 0 1 1.8 0l.17.1a2 2 0 0 0 1.8 0L8 12 5 6l.9-.45a2 2 0 0 1 2.09.2l4.02 3a2 2 0 0 0 2.1.2l4.19-2.06a2.41 2.41 0 0 1 1.73-.17L21 7a1.4 1.4 0 0 1 .87 1.99l-.38.76c-.23.46-.6.84-1.07 1.08L7.58 17.2a2 2 0 0 1-1.22.18Z"/></svg>
+              </div>
+              <p>Выездные мероприятия</p>
+            </div>
+            <div class="weCan-item">
+              <div class="weCan-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin-check-icon lucide-map-pin-check"><path d="M19.43 12.935c.357-.967.57-1.955.57-2.935a8 8 0 0 0-16 0c0 4.993 5.539 10.193 7.399 11.799a1 1 0 0 0 1.202 0 32.197 32.197 0 0 0 .813-.728"/><circle cx="12" cy="10" r="3"/><path d="m16 18 2 2 4-4"/></svg>
+              </div>
+              <p>Мероприятия в Москве и&nbsp;Подмосковье</p>
+            </div>
+            <div class="weCan-item">
+              <div class="weCan-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-icon lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></svg>
+              </div>
+              <p>От 2 до 200 человек</p>
+            </div>
+            <div class="weCan-item">
+              <div class="weCan-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles-icon lucide-sparkles"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>
+              </div>
+              <p>Концептуальные мероприятия с&nbsp;лоском</p>
+            </div>
+            <div class="weCan-item">
+              <div class="weCan-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-smile-icon lucide-smile"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" x2="9.01" y1="9" y2="9"/><line x1="15" x2="15.01" y1="9" y2="9"/></svg>
+              </div>
+              <p>Вы и ваши клиенты будут в&nbsp;восторге</p>
+            </div>
+            <div class="weCan-item">
+              <div class="weCan-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-video-icon lucide-video"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
+              </div>
+              <p>Обсуждаем концепцию на встрече или по Zoom</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
 
     <div class="lazy-section" data-template="portfolio"></div>
     <template id="portfolio">
@@ -694,7 +816,6 @@ h3 {
                     <h2 class="section-title text-center">КОМАНДА <span class="text-primary">8STORIES</span> ОРГАНИЗУЕТ ДЛЯ ВАС ЭКСКЛЮЗИВНОЕ МЕРОПРИЯТИЕ ПОД КЛЮЧ</h2>
                 </div>
                 
-                <!-- Swiper -->
                 <div class="swiper-container swiper-portfolio">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide" style="background-image: url('https://source.unsplash.com/random/800x500/?kids-party,1');">
@@ -708,7 +829,7 @@ h3 {
                                     <p>Погрузитесь в атмосферу настоящего русского праздника — с богатым убранством, живой музыкой, народными мотивами и изысканной подачей. Этот день рождения стал воплощением душевности и щедрости русской культуры в современной элегантной подаче.</p>
                                     <p>Мы оформили пространство в лучших традициях: вышитые текстильные элементы, хохлома, жостово, теплое дерево и живые цветы. Вечер сопровождался аутентичным музыкальным сопровождением, яркими интерактивами с артистами и современной кухней с тонкими акцентами на традиционные вкусы.</p>
                                     <div class="portfolio-item-btns">
-                                        <a class="btn btn-primary" href="#">Подробнее</a>
+                                        <a class="btn btn-primary goTo" href="#tabsPortfolio" data-tab="tabsPortfolio-3">Подробнее</a>
                                     </div>
                                 </div>
                             </div>
@@ -724,7 +845,7 @@ h3 {
                                     <p>Эта свадьба стала воплощением мечты о бесконечном лете, тёплом ветре, запахе моря и золотом свете уходящего дня. Всё было создано для того, чтобы гости погрузились в атмосферу лёгкости, романтики и безупречного стиля.</p>
                                     <p>Сценарий вечера был выстроен в ритме солнца: от welcome-коктейлей под мягкий лаунж до свадебной церемонии на фоне закатного неба, где нежные оттенки персика, золота и пудры буквально растворялись в пространстве</p>
                                     <div class="portfolio-item-btns">
-                                        <a class="btn btn-primary" href="#">Подробнее</a>
+                                        <a class="btn btn-primary goTo" href="#tabsPortfolio" data-tab="tabsPortfolio-2">Подробнее</a>
                                     </div>
                                 </div>
                             </div>
@@ -732,14 +853,14 @@ h3 {
                         <div class="swiper-slide" style="background-image: url('https://source.unsplash.com/random/800x500/?kids-party,1');">
                             <div class="slide-content portfolio-item card">
                                 <div class="portfolio-item-img">
-                                    <img src="./images/trends/compress/img_1.jpg" alt="">
+                                    <img src="./images/trends/compress/img_new_3.jpg" alt="">
                                 </div>
                                 <div class="portfolio-item-content">
-                                    <h3>The Trends Forum</h3>
+                                    <h3>Конференция</h3>
                                     <p>Ведущий международная выставка новейших технологии.</p>
                                     <p>Форум собрал лидеров финансового сектора, инвесторов, основателей стартапов и представителей высокотехнологичных компаний. Мы создали деловую платформу нового уровня — с безупречной организацией, продуманным пространством и современным визуальным кодом.</p>
                                     <div class="portfolio-item-btns">
-                                        <a class="btn btn-primary" href="#">Подробнее</a>
+                                        <a class="btn btn-primary goTo" href="#tabsPortfolio" data-tab="tabsPortfolio-1">Подробнее</a>
                                     </div>
                                 </div>
                             </div>
@@ -754,7 +875,7 @@ h3 {
                                     <p>Элегантность игры. Привилегия круга.</p>
                                     <p>Открытие гольф-сезона — не просто спортивное событие, а знаковый gathering для тех, кто ценит стиль, статус и безупречный сервис. Мы создали пространство, в котором спорт встречается с высоким обществом, деловые связи — с лёгкостью загородного уикенда, а атмосфера — с настоящей эстетикой игры.</p>
                                     <div class="portfolio-item-btns">
-                                        <a class="btn btn-primary" href="#">Подробнее</a>
+                                        <a class="btn btn-primary goTo" href="#tabsPortfolio" data-tab="tabsPortfolio-5">Подробнее</a>
                                     </div>
                                 </div>
                             </div>
@@ -769,7 +890,7 @@ h3 {
                                     <p>Искусство скорости. Энергия исключительности.</p>
                                     <p>Вечер, где не звучали случайные имена. Только те, кто чувствует вибрацию мощности с первого взгляда и отличает силу от громкости. Закрытое мероприятие Lamborghini — это не про автомобили. Это про образ жизни.</p>
                                     <div class="portfolio-item-btns">
-                                        <a class="btn btn-primary" href="#">Подробнее</a>
+                                        <a class="btn btn-primary goTo" href="#tabsPortfolio" data-tab="tabsPortfolio-4">Подробнее</a>
                                     </div>
                                 </div>
                             </div>
@@ -777,7 +898,7 @@ h3 {
                         <div class="swiper-slide" style="background-image: url('https://source.unsplash.com/random/800x500/?kids-party,1');">
                             <div class="slide-content portfolio-item card">
                                 <div class="portfolio-item-img">
-                                    <img src="./images/trends/compress/img_1.jpg" alt="">
+                                    <img src="./images/air/compress/img_15.jpg" alt="">
                                 </div>
                                 <div class="portfolio-item-content">
                                     <h3>Воздушный Бал — пространство вне времени.</h3>
@@ -785,7 +906,7 @@ h3 {
                                     <p>Каждое движение — как танец, каждый гость — как иллюзия.</p>
                                     <p>Это не вечер. Это чувство. Воздушное, едва уловимое, настоящее.</p>
                                     <div class="portfolio-item-btns">
-                                        <a class="btn btn-primary" href="#">Подробнее</a>
+                                        <a class="btn btn-primary goTo" href="#tabsPortfolio" data-tab="tabsPortfolio-6">Подробнее</a>
                                     </div>
                                 </div>
                             </div>
@@ -803,22 +924,20 @@ h3 {
         </section>
     </template>
      
-
     <div class="lazy-section" data-template="images"></div>
     <template id="images">
         <section class="">
             <div class="masonry ">
-                <a href="./images/wid/init/001.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/001.jpg" /></a>
-                <a href="./images/wid/init/002.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/002.jpg" /></a>
+                <a href="./images/wid/init/001.jpg" data-fancybox="wid" class="brick big"><img src="./images/wid/compress/001.jpg" /></a>
                 <a href="./images/wid/init/004.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/004.jpg" /></a>
                 <a href="./images/wid/init/005.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/005.jpg" /></a>
                 <a href="./images/wid/init/011.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/011.jpg" /></a>
-                <a href="./images/wid/init/040.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/040.jpg" /></a>
-                <a href="./images/wid/init/066.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/066.jpg" /></a>
+                <a href="./images/wid/init/040.jpg" data-fancybox="wid" class="brick big"><img src="./images/wid/compress/040.jpg" /></a>
+                <a href="./images/wid/init/066.jpg" data-fancybox="wid" class="brick "><img src="./images/wid/compress/066.jpg" /></a>
                 <a href="./images/wid/init/088.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/088.jpg" /></a>
                 <a href="./images/wid/init/112.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/112.jpg" /></a>
-                <a href="./images/wid/init/142.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/142.jpg" /></a>
-                <a href="./images/wid/init/145.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/145.jpg" /></a>
+                <a href="./images/wid/init/142.jpg" data-fancybox="wid" class="brick "><img src="./images/wid/compress/142.jpg" /></a>
+                <a href="./images/wid/init/145.jpg" data-fancybox="wid" class="brick tall"><img src="./images/wid/compress/145.jpg" /></a>
                 <a href="./images/wid/init/198.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/198.jpg" /></a>
                 <a href="./images/wid/init/202.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/202.jpg" /></a>
                 <a href="./images/wid/init/215.jpg" data-fancybox="wid" class="brick"><img src="./images/wid/compress/215.jpg" /></a>
@@ -827,54 +946,7 @@ h3 {
     </template>
 
 
-    <div class="lazy-section" data-template="about"></div>
-    <template id="about">
-        <section class="about shadow-section" id="about">
-        <svg class="about-svg" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="1920" height="800" preserveAspectRatio="none" viewBox="0 0 1920 800">
-            <g mask="url(&quot;#SvgjsMask1018&quot;)" fill="none">
-                <rect width="1920" height="800" x="0" y="0" fill="rgba(26, 24, 24, 1)"></rect>
-                <path d="M0,540.698C100.261,528.938,179.956,463.613,273.401,425.421C392.539,376.729,547.856,388.507,624.802,285.337C702.552,181.089,699.132,29.397,661.633,-95.128C626.18,-212.862,524.696,-295.182,427.365,-370.314C344.359,-434.389,241.508,-452.841,145.026,-493.912C33.05,-541.579,-68.909,-666.628,-185.315,-631.125C-301.982,-595.542,-299.876,-421.071,-383.849,-332.607C-474.055,-237.577,-651.992,-224.567,-690.202,-99.236C-727.75,23.922,-632.109,148.348,-563.743,257.453C-502.023,355.952,-421.848,442.603,-317.982,494.789C-220.31,543.863,-108.563,553.432,0,540.698" fill="#151313"></path>
-                <path d="M1920 1457.766C2052.384 1443.92 2188.217 1462.1019999999999 2307.338 1402.7089999999998 2434.282 1339.4160000000002 2552.556 1244.779 2608.56 1114.455 2664.1040000000003 985.2 2603.515 841.532 2608.901 700.951 2615.805 520.736 2746.748 320.749 2644.665 172.07399999999996 2544.831 26.673999999999978 2323.058 31.798999999999978 2146.728 27.833999999999946 1998.737 24.505999999999972 1870.455 106.02999999999997 1729.583 151.49800000000005 1593.268 195.495 1442.438 199.19000000000005 1332.252 290.713 1212.3319999999999 390.322 1099.354 525.246 1092.144 680.972 1085.024 834.757 1229.328 946.196 1295.467 1085.215 1360.243 1221.368 1347.353 1412.325 1476.841 1489.568 1606.659 1567.008 1769.659 1473.49 1920 1457.766" fill="#1f1d1d"></path>
-            </g>
-            <defs>
-                <mask id="SvgjsMask1018">
-                    <rect width="1920" height="800" fill="#ffffff"></rect>
-                </mask>
-            </defs>
-        </svg>
-        <h2 class="text-center section-title">ВЛЮБЛЕННЫЕ <br/> В СВОЕ ДЕЛО ПРОФЕССИОНАЛЫ</h2>
-        <div class="container">
-            <div class="about-wrp">
-                <div class="about-l">
-                    <div class="about-l-img-2">
-                        <img src="./images/about_2.JPG" alt="">
-                    </div>
-                    <div class="about-l-img-1">
-                        <img src="./images/about_1.JPG" alt="">
-                    </div>
-                </div>
-                <div class="about-r">
-                    <div class="info-grid">
-                        <div class="info-block">
-                          <h4 class="lg">5</h4>
-                          <p>лет опыта организации уникальных мероприятий и праздников в Москве и за ее пределами</p>
-                        </div>
-                        <div class="info-block">
-                          <h4 class="lg">350+</h4>
-                          <p>эксклюзивных мероприятий для самых взыскательных клиентов, включая медийных личностей</p>
-                        </div>
-                      
-                        <div class="info-full">
-                          <h4>ВЫСОКОПРОФЕССИОНАЛЬНО</h4>
-                          <p>Высоко профессионально выполняем каждую деталь, создавая идеальную атмосферу.</p>
-                        </div>
-                      </div>
-                      
-                </div>
-                </div>
-            </div>
-        </section>
-    </template>
+   
 
 
     

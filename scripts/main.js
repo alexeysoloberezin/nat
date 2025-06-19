@@ -82,9 +82,29 @@ class InitAppScript {
             if (link) {
                 e.preventDefault();
                 const targetId = link.getAttribute('href').slice(1);
+                const tabId = link.getAttribute('data-tab');
+
                 await this.handleSectionNavigation(targetId);
+
+                if(tabId){
+                    setTimeout(() => {
+                        InitTabs(tabId);
+                    }, 100);
+                }
             }
         });
+    }
+
+    initImages(){
+        // const grid = document.querySelector('.masonry');
+        // imagesLoaded(grid, () => {
+        //   new Masonry(grid, {
+        //     itemSelector: '.brick',
+        //     columnWidth: 200,
+        //     gutter: 16,
+        //     percentPosition: true
+        //   });
+        // });
     }
 
     portfolioSwiperInit() {
@@ -95,6 +115,7 @@ class InitAppScript {
             grabCursor: true,
             centeredSlides: true,
             slidesPerView: 'auto',
+            autoHeight: true,
             coverflowEffect: {
                 rotate: 20,
                 stretch: 0,
@@ -272,6 +293,10 @@ class InitAppScript {
                     InitTabs();
                 }
 
+                if(templateId === 'images'){
+                    this.initImages();
+                }
+
                 // Даём время на отрисовку
                 setTimeout(resolve, 20);
             } else {
@@ -327,152 +352,362 @@ document.addEventListener('DOMContentLoaded', () => {
     new InitAppScript().init();
 });
 
+const data = {
+    "tabsPortfolio-1": {
+        "title": "Конференция",
+        "subtitle": "Конференция",
+        "cols": {
+            "desktop": 4,
+            "mobile": 2
+        },
+        "classes": [
+            "",
+            "",
+            "tall",
+            "tall",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "big",
+            "big",
+            "big",
+            "tall",
+            "tall",
+        ],
+        "classesMob": [
+            "",
+            "",
+            "",
+            "tall",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "big",
+            "",
+            "tall",
+            "",
+        ],
+        "images": [
+            "./images/trends/**/img_new_1.jpg",
+            "./images/trends/**/img_new_2.jpg",
+            "./images/trends/**/img_new_3.jpg",
+            "./images/trends/**/img_new_4.jpg",
+            "./images/trends/**/img_new_5.jpg",
+            "./images/trends/**/img_new_6.jpg",
+            "./images/trends/**/img_new_7.jpg",
+            "./images/trends/**/img_new_8.jpg",
+            "./images/trends/**/img_new_9.jpg",
+            "./images/trends/**/img_new_10.jpg",
+            "./images/trends/**/img_new_11.jpg",
+            "./images/trends/**/img_new_12.jpg",
+            "./images/trends/**/img_new_13.jpg",
+            "./images/trends/**/img_new_14.jpg",
+            "./images/trends/**/img_new_16.jpg",
+        ]
+        
+    },
+    "tabsPortfolio-2": {
+        "title": "Свадьба в стиле вечеринки Sunset  - координация",
+        "subtitle": "Свадьба в стиле вечеринки Sunset  - координация",
+        "cols": {
+            "desktop": 4,
+            "mobile": 2
+        },
+        "classes": [
+            "big",
+            "",
+            "",
+            "",
+            "",
+            "big",
+            "",
+            "big",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "tall",
+            "tall",
+            "big",
+        ],
+        "classesMob": [
+            "big",
+            "",
+            "",
+            "",
+            "",
+            "big",
+            "",
+            "big",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "tall",
+            "",
+            "big",
+        ],
+        "images": [
+            "./images/wid/**/001.jpg",
+            "./images/wid/**/215.jpg",
+            "./images/wid/**/002.jpg",
+            "./images/wid/**/004.jpg",
+            "./images/wid/**/005.jpg",
+            "./images/wid/**/040.jpg",
+            "./images/wid/**/198.jpg",
+            "./images/wid/**/041.jpg",
+            "./images/wid/**/210.jpg",
+            "./images/wid/**/202.jpg",
+            "./images/wid/**/066.jpg",
+            "./images/wid/**/081.jpg",
+            "./images/wid/**/088.jpg",
+            "./images/wid/**/112.jpg",
+            "./images/wid/**/142.jpg",
+            "./images/wid/**/145.jpg",
+            "./images/wid/**/011.jpg",
+        ]
+    },
+ 
+    "tabsPortfolio-3": {
+        "title": "День рождения в Русском стиле",
+        "subtitle": "День рождения в Русском стиле",
+        "cols": {
+            "desktop": 4,
+            "mobile": 2
+        },
+        "classes": [
+            "tall",
+            "big",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "big",
+            "",
+            "",
+            "tall",
+            "tall",
+        ],
+        "classesMob": [
+            "wide",
+            "wide",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "wide",
+            "",
+            "",
+            "big",
+            "big",
+        ],
+        "images": [
+            "./images/drnat/**/img_1.jpg",
+            "./images/drnat/**/img_2.jpg",
+            "./images/drnat/**/img_3.jpg",
+            "./images/drnat/**/img_4.jpg",
+            "./images/drnat/**/img_5.jpg",
+            "./images/drnat/**/img_6.jpg",
+            "./images/drnat/**/img_7.jpg",
+            "./images/drnat/**/img_8.jpg",
+            "./images/drnat/**/img_9.jpg",
+            "./images/drnat/**/img_10.jpg",
+            "./images/drnat/**/img_11.jpg",
+            "./images/drnat/**/img_12.jpg",
+            "./images/drnat/**/img_13.jpg",
+            "./images/drnat/**/img_14.jpg",
+            "./images/drnat/**/img_15.jpg",
+        ]
+    },
+    "tabsPortfolio-4": {
+        "title": "Ламборгини вечеринки",
+        "subtitle": "Интеграция travel-компании на закрытом мероприятии Lamborghini",
+        "cols": {
+            "desktop": 4,
+            "mobile": 2
+        },
+        "classes": [
+            "tall",
+            "tall",
+            "tall",
+            "tall",
+            "",
+            "",
+            "",
+            "",
+            "big",
+            "tall",
+            "tall",
+            "big",
+            "big",
+        ],
+        "classesMob": [
+            "tall",
+            "tall",
+            "tall",
+            "tall",
+            "",
+            "",
+            "big",
+            "",
+            "",
+            "big",
+            "tall",
+            "",
+            "",
+        ],
+        "images": [
+            "./images/lambo/**/img_1.jpg",
+            "./images/lambo/**/img_2.jpg",
+            "./images/lambo/**/img_3.jpg",
+            "./images/lambo/**/img_4.jpg",
+            "./images/lambo/**/img_5.jpg",
+            "./images/lambo/**/img_8.jpg",
+            "./images/lambo/**/img_9.jpg",
+            "./images/lambo/**/img_10.jpg",
+            "./images/lambo/**/img_11.jpg",
+            "./images/lambo/**/img_6.jpg",
+            "./images/lambo/**/img_7.jpg",
+            "./images/lambo/**/img_12.jpg",
+            "./images/lambo/**/img_15.jpg",
+        ]
+    },
+    "tabsPortfolio-5": {
+        "title": "Интеграция Neverend, открытие гольф сезона",
+        "subtitle": "Интеграция Neverend, открытие гольф сезона",
+        "cols": {
+            "desktop": 4,
+            "mobile": 2
+        },
+        "classes": [
+            "tall",
+            "big",
+            "tall",
+            "big",
+            "wide",
+            "wide",
+            "",
+            "",
+            "",
+            "",
+        ],
+        "classesMob": [
+            "tall",
+            "big",
+            "tall",
+            "big",
+            "wide",
+            "wide",
+            "",
+            "",
+            "",
+            "",
+        ],
+        "images": [
+            "./images/neverend/**/img_1.jpg",
+            "./images/neverend/**/img_2.jpg",
+            "./images/neverend/**/img_3.jpg",
+            "./images/neverend/**/img_4.jpg",
+            "./images/neverend/**/img_6.jpg",
+            "./images/neverend/**/img_7.jpg",
+        ]
+    },
+    "tabsPortfolio-6": {
+        "title": "Воздушный Бал — пространство вне времени.",
+        "subtitle": "Воздушный Бал — пространство вне времени.",
+        "cols": {
+            "desktop": 4,
+            "mobile": 2
+        },
+        "classes": [
+            "",
+            "big",
+            "tall",
+            "tall",
+            "tall",
+            "big",
+            "",
+            "tall",
+            "tall",
+            "big",
+            "tall",
+            "tall",
+            "tall",
+            "tall",
+        ],
+        "classesMob": [
+            "",
+            "big",
+            "tall",
+            "tall",
+            "tall",
+            "big",
+            "",
+            "tall",
+            "tall",
+            "big",
+            "tall",
+            "tall",
+            "tall",
+            "big",
+        ],
+        "images": [
+            "./images/air/**/img_15.jpg",
+            "./images/air/**/img_1.jpg",
+            "./images/air/**/img_2.jpg",
+            "./images/air/**/img_4.jpg",
+            "./images/air/**/img_5.jpg",
+            "./images/air/**/img_6.jpg",
+            "./images/air/**/img_7.jpg",
+            "./images/air/**/img_8.jpg",
+            "./images/air/**/img_9.jpg",
+            "./images/air/**/img_10.jpg",
+            "./images/air/**/img_11.jpg",
+            "./images/air/**/img_12.jpg",
 
-
-function InitTabs(){
-    
-    const data = {
-        "tabsPortfolio-1": {
-            "title": "The Trends",
-            "subtitle": "The Trends",
-            "cols": {
-                "desktop": 4,
-                "mobile": 2
-            },
-            "images": [
-                "./images/trends/**/img_1.jpg",
-                "./images/trends/**/img_2.jpg",
-                "./images/trends/**/img_3.jpg",
-                "./images/trends/**/img_4.jpg",
-                "./images/trends/**/img_5.jpg",
-                "./images/trends/**/img_6.jpg",
-                "./images/trends/**/img_7.jpg",
-                "./images/trends/**/img_8.jpg",
-                "./images/trends/**/img_9.jpg",
-                "./images/trends/**/img_10.jpg",
-                "./images/trends/**/img_11.jpg",
-                "./images/trends/**/img_12.jpg",
-                "./images/trends/**/img_13.jpg",
-                "./images/trends/**/img_14.jpg",
-                "./images/trends/**/img_15.jpg",
-                "./images/trends/**/img_16.jpg",
-                "./images/trends/**/img_17.jpg",
-                "./images/trends/**/img_18.jpg",
-                "./images/trends/**/img_19.jpg",
-            ]
-            
-        },
-        "tabsPortfolio-2": {
-            "title": "Свадьба в стиле вечеринки Sunset  - координация",
-            "subtitle": "Свадьба в стиле вечеринки Sunset  - координация",
-            "cols": {
-                "desktop": 4,
-                "mobile": 2
-            },
-            "images": [
-                "./images/wid/**/001.jpg",
-                "./images/wid/**/002.jpg",
-                "./images/wid/**/004.jpg",
-                "./images/wid/**/005.jpg",
-                "./images/wid/**/011.jpg",
-                "./images/wid/**/040.jpg",
-                "./images/wid/**/041.jpg",
-                "./images/wid/**/066.jpg",
-                "./images/wid/**/081.jpg",
-                "./images/wid/**/088.jpg",
-                "./images/wid/**/112.jpg",
-                "./images/wid/**/142.jpg",
-                "./images/wid/**/145.jpg",
-                "./images/wid/**/198.jpg",
-                "./images/wid/**/202.jpg",
-                "./images/wid/**/210.jpg",
-                "./images/wid/**/215.jpg",
-            ]
-        },
-     
-        "tabsPortfolio-3": {
-            "title": "День рождение в Русском стиле",
-            "subtitle": "День рождение в Русском стиле",
-            "cols": {
-                "desktop": 4,
-                "mobile": 2
-            },
-            "images": [
-                "./images/drnat/**/img_1.jpg",
-                "./images/drnat/**/img_2.jpg",
-                "./images/drnat/**/img_3.jpg",
-                "./images/drnat/**/img_4.jpg",
-                "./images/drnat/**/img_5.jpg",
-                "./images/drnat/**/img_6.jpg",
-                "./images/drnat/**/img_7.jpg",
-                "./images/drnat/**/img_8.jpg",
-                "./images/drnat/**/img_9.jpg",
-                "./images/drnat/**/img_10.jpg",
-                "./images/drnat/**/img_11.jpg",
-                "./images/drnat/**/img_12.jpg",
-                "./images/drnat/**/img_13.jpg",
-                "./images/drnat/**/img_14.jpg",
-                "./images/drnat/**/img_15.jpg",
-            ]
-        },
-        "tabsPortfolio-4": {
-            "title": "Ламборгини вечеринки",
-            "subtitle": "Интеграция travel-компании на закрытом мероприятии Lamborghini",
-            "cols": {
-                "desktop": 4,
-                "mobile": 2
-            },
-            "images": [
-                "./images/lambo/**/img_1.jpg",
-                "./images/lambo/**/img_2.jpg",
-                "./images/lambo/**/img_3.jpg",
-                "./images/lambo/**/img_4.jpg",
-                "./images/lambo/**/img_5.jpg",
-                "./images/lambo/**/img_6.jpg",
-                "./images/lambo/**/img_7.jpg",
-                "./images/lambo/**/img_8.jpg",
-                "./images/lambo/**/img_9.jpg",
-                "./images/lambo/**/img_10.jpg",
-                "./images/lambo/**/img_11.jpg",
-                "./images/lambo/**/img_12.jpg",
-                "./images/lambo/**/img_13.jpg",
-                "./images/lambo/**/img_14.jpg",
-                "./images/lambo/**/img_15.jpg",
-            ]
-        },
-        "tabsPortfolio-5": {
-            "title": "Интеграция Neverend, открытие гольф сезона",
-            "subtitle": "Интеграция Neverend, открытие гольф сезона",
-            "cols": {
-                "desktop": 4,
-                "mobile": 2
-            },
-            "images": [
-                "./images/neverend/**/img_1.jpg",
-                "./images/neverend/**/img_2.jpg",
-                "./images/neverend/**/img_3.jpg",
-                "./images/neverend/**/img_4.jpg",
-                "./images/neverend/**/img_5.jpg",
-                "./images/neverend/**/img_6.jpg",
-                "./images/neverend/**/img_7.jpg",
-            ]
-        }
+            "./images/air/**/img_13.jpg",
+            "./images/air/**/img_14.jpg",
+        ]
     }
+}
 
+function InitTabs(tabId){
     const tabsWrapper = document.querySelector('.tabsPortfolio-tabs');
 
     const keys = Object.keys(data);
 
-    keys.forEach((key, index) => {
-        tabsWrapper.innerHTML += `<button data-tab="${key}" class="btn  ${index === 0 ? 'btn-primary' : 'btn-gray'}">${data[key].title}</button>`;
-    });
+    if(!tabId){
+        keys.forEach((key, index) => {
+            tabsWrapper.innerHTML += `<button data-tab="${key}" class="btn  ${index === 0 ? 'btn-primary' : 'btn-gray'}">${data[key].title}</button>`;
+        });
+    }
 
     const tabsContainer = document.querySelector('.tabsPortfolio');
     const tabButtons = tabsContainer.querySelectorAll('.tabsPortfolio-tabs button');
     const contentContainer = tabsContainer.querySelector('.tabsPortfolio-content');
     const isDesktop = window.innerWidth > 768;
 
-    function createTemplate(images, title, cols) {
+    if(tabId){
+        activateTab(tabId);
+        return
+    }
+
+    function createTemplate(images, title, cols, classes, classesMob) {
         const template = document.createElement('div');
         template.classList.add('tabsPortfolio-item');
       
@@ -480,12 +715,14 @@ function InitTabs(){
           isDesktop ? image.replace('/**/', '/compress/') : image.replace('/**/', '/mobile/');
         const getImageUrlOriginal = (image) => image.replace('/**/', '/init/');
       
+        const cls = isDesktop ? classes : classesMob
+
         const masonryHTML = `
           <div class="masonry-images masonry" style="--cols-desktop: ${cols.desktop}; --cols-mobile: ${cols.mobile};">
-            ${images.map(image => `<a href="${getImageUrlOriginal(image)}" data-fancybox="${title}" class="brick"><img src="${getImageUrl(image)}" /></a>`).join('')}
+            ${images.map((image, index) => `<a href="${getImageUrlOriginal(image)}" data-fancybox="${title}" class="brick ${cls[index]}"><img src="${getImageUrl(image)}" /></a>`).join('')}
           </div>
         `;
-      
+        
         // оборачиваем html в DOM-элемент
         const wrapper = document.createElement('div');
         wrapper.innerHTML = masonryHTML;
@@ -517,7 +754,7 @@ function InitTabs(){
        
         contentContainer.innerHTML = '';
         
-        const content = createTemplate(templates.images, templates.title, templates.cols);
+        const content = createTemplate(templates.images, templates.title, templates.cols, templates.classes, templates.classesMob);
         contentContainer.appendChild(content);
         
         // var msnry = new Masonry( '.masonry-images', {
